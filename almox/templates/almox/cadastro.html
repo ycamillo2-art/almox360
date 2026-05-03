@@ -5,11 +5,11 @@
     <h3 class="font-weight-bold">Cadastro de Produto</h3>
 </div>
 
-<div class="content-card">
-    <h5 class="font-weight-bold mb-4"><i class="fas fa-plus-circle text-success"></i> Novo Lançamento de Estoque</h5>
+<div class="content-card p-5">
+    <h5 class="font-weight-bold mb-5"><i class="fas fa-plus-circle text-success"></i> Novo Lançamento de Estoque</h5>
     <form method="post">
         {% csrf_token %}
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-md-6 form-group">
                 <label class="font-weight-bold">Nome do Produto</label>
                 <input type="text" name="nome" class="form-control form-control-custom" required placeholder="Ex: Pá de Bico">
