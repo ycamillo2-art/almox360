@@ -9,9 +9,21 @@
   "icons": [
     {
       "src": "https://sc02.alicdn.com/kf/A21342dbfba084bdb9a0d9db6c2f4ea732.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://sc02.alicdn.com/kf/A21342dbfba084bdb9a0d9db6c2f4ea732.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://sc02.alicdn.com/kf/A21342dbfba084bdb9a0d9db6c2f4ea732.png",
       "sizes": "1024x1024",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
