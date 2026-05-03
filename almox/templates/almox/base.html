@@ -140,14 +140,26 @@
             .sidebar-overlay.show { display: block; }
             .main-wrapper {
                 margin-left: 0;
-                width: 100%;
-                padding: 80px 15px 30px;
+                width: 100vw;
+                padding: 70px 10px 30px;
             }
-            .content-card { padding: 20px; border-radius: 15px; }
-            .dash-card { padding: 15px; height: 100px; margin-bottom: 15px; }
-            .card-val { font-size: 24px; }
-            .table-container { overflow-x: auto; }
-            .table-almox th, .table-almox td { padding: 10px; font-size: 13px; }
+            .content-card { padding: 15px; border-radius: 12px; width: 100%; margin: 0; }
+            .dash-card { padding: 10px; height: 90px; margin-bottom: 10px; }
+            .card-val { font-size: 22px; margin-right: 8px; }
+            .card-label { font-size: 12px; }
+            .table-container { 
+                width: 100%;
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-almox { min-width: 600px; }
+            .table-almox th, .table-almox td { padding: 8px; font-size: 12px; }
+            
+            /* Stack forms on mobile */
+            .row > [class*="col-"] {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
         }
     </style>
     <script>

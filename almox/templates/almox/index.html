@@ -93,36 +93,37 @@
     <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar produto">
 </div>
 
-<div class="table-container">
-    <table class="table-almox" id="productTable">
-        <thead>
-            <tr>
-                <th>Código</th>
-                <th>Nome</th>
-                <th>Categoria</th>
-                <th>Saldo</th>
-                <th>Local</th>
-                <th>Mínimo</th>
-                <th>Obs</th>
-                <th>Uso</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for p in produtos %}
-            <tr class="{% if p.saldo <= p.minimo %}row-alerta{% else %}row-ok{% endif %}">
-                <td>{{ p.codigo }}</td>
-                <td class="font-weight-bold">{{ p.nome }}</td>
-                <td>{{ p.categoria }}</td>
-                <td>{{ p.saldo|floatformat:1 }}</td>
-                <td>{{ p.local }}</td>
-                <td>{{ p.minimo|floatformat:1 }}</td>
-                <td>{{ p.observacao|default:"-" }}</td>
-                <td>{{ p.em_uso|floatformat:1 }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+    <div class="table-container shadow-sm">
+        <div style="overflow-x: auto;">
+            <table class="table-almox" id="productTable">
+                <thead>
+                    <tr>
+                        <th>Cód</th>
+                        <th>Nome</th>
+                        <th>Cat</th>
+                        <th>Saldo</th>
+                        <th>Loc</th>
+                        <th>Mín</th>
+                        <th>Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in produtos %}
+                    <tr class="{% if p.saldo <= p.minimo %}row-alerta{% else %}row-ok{% endif %}">
+                        <td>{{ p.codigo }}</td>
+                        <td class="font-weight-bold">{{ p.nome }}</td>
+                        <td>{{ p.categoria|truncatechars:5 }}</td>
+                        <td class="text-center">{{ p.saldo|floatformat:1 }}</td>
+                        <td>{{ p.local }}</td>
+                        <td class="text-center">{{ p.minimo|floatformat:1 }}</td>
+                        <td class="text-center">{{ p.em_uso|floatformat:1 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 
 <script>
     document.getElementById('searchInput').addEventListener('keyup', function() {
