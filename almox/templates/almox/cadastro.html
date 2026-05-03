@@ -48,7 +48,15 @@
                 <input type="text" name="observacao" class="form-control form-control-custom">
             </div>
         </div>
-        <button type="submit" class="btn btn-success btn-custom w-100 mt-4 shadow-sm">SALVAR NO SISTEMA</button>
+        <button type="submit" class="btn btn-success btn-custom w-100 mt-4 shadow-sm" id="btn-salvar">SALVAR NO SISTEMA</button>
     </form>
 </div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function() {
+        const btn = document.getElementById('btn-salvar');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> SALVANDO...';
+    });
+</script>
 {% endblock %}

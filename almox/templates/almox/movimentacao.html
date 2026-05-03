@@ -15,8 +15,8 @@
         </div>
 
         <div id="itens-container">
-            <div class="row item-linha mb-3">
-                <div class="col-md-8">
+            <div class="row item-linha mb-3 align-items-end">
+                <div class="col-8 col-md-8">
                     <label class="font-weight-bold">Produto</label>
                     <select name="produto" class="form-control form-control-custom select-produto" required>
                         <option value="">Selecione o produto...</option>
@@ -25,9 +25,14 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="col-md-4">
-                    <label class="font-weight-bold">Quantidade</label>
+                <div class="col-3 col-md-3">
+                    <label class="font-weight-bold">Qtd</label>
                     <input type="text" name="quantidade" class="form-control form-control-custom" required placeholder="0.00">
+                </div>
+                <div class="col-1 col-md-1 p-0 mb-2">
+                    <button type="button" class="btn btn-link text-danger btn-remove-item" style="display: none;">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -36,7 +41,7 @@
             <i class="fas fa-plus"></i> Adicionar outro item
         </button>
 
-        <button type="submit" class="btn btn-danger btn-custom w-100 py-3 shadow-sm">CONFIRMAR SAÍDA</button>
+        <button type="submit" class="btn btn-danger btn-custom w-100 py-3 shadow-sm btn-submit-loading">CONFIRMAR SAÍDA</button>
     </form>
 </div>
 
@@ -45,7 +50,20 @@
         const container = document.getElementById('itens-container');
         const novaLinha = container.querySelector('.item-linha').cloneNode(true);
         novaLinha.querySelectorAll('input, select').forEach(el => el.value = '');
+        novaLinha.querySelector('.btn-remove-item').style.display = 'block';
         container.appendChild(novaLinha);
+    });
+
+    document.getElementById('itens-container').addEventListener('click', function(e) {
+        if(e.target.closest('.btn-remove-item')) {
+            e.target.closest('.item-linha').remove();
+        }
+    });
+
+    document.getElementById('form-movimentacao').addEventListener('submit', function() {
+        const btn = this.querySelector('.btn-submit-loading');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> PROCESSANDO...';
     });
 </script>
 {% endblock %}
