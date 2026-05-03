@@ -1,12 +1,27 @@
-const CACHE_NAME = 'almox-v1.3.2';
+const CACHE_NAME = 'almox-v1.4.0';
 const ASSETS = [
-  '/static/manifest.json'
+  '/',
+  '/cadastro/',
+  '/movimentacao/',
+  '/veiculos/',
+  '/relatorios/',
+  '/static/icon.png',
+  '/static/manifest.json',
+  'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+  'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',
+  'https://code.jquery.com/jquery-3.5.1.min.js',
+  'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js',
+  'https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js',
+  'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'
 ];
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(ASSETS);
+    })
   );
 });
 
@@ -22,16 +37,18 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Strategy: Network First
-  // We want to see updates immediately, so we always try the network.
-  if (event.request.mode === 'navigate') {
+  // We want to handle POST requests specially if offline, but SW can't "cache" POSTs easily.
+  // For GET requests (browsing), use Network First.
+  if (event.request.method === 'GET') {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
-    );
-  } else {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        return response || fetch(event.request);
+      fetch(event.request).then(response => {
+        // Update cache with fresh version
+        const resClone = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
+        return response;
+      }).catch(() => {
+        // Fallback to cache if network fails
+        return caches.match(event.request);
       })
     );
   }

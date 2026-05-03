@@ -84,6 +84,21 @@
     });
 
     document.getElementById('form-movimentacao').addEventListener('submit', function(e) {
+        if (!navigator.onLine) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                if (!data[key]) {
+                    data[key] = value;
+                } else {
+                    if (!Array.isArray(data[key])) data[key] = [data[key]];
+                    data[key].push(value);
+                }
+            });
+            addToSyncQueue(window.location.href, data, 'Saída de Material');
+            return;
+        }
         const btn = this.querySelector('.btn-submit-loading');
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> PROCESSANDO...';

@@ -142,6 +142,14 @@
 <script>
     document.querySelector('form').addEventListener('submit', function(e) {
         if(!this.querySelector('input[name="confirmar_id"]')) {
+            if (!navigator.onLine) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const data = {};
+                formData.forEach((value, key) => data[key] = value);
+                addToSyncQueue(window.location.href, data, 'Manutenção: ' + data.veiculo);
+                return;
+            }
             const btn = document.getElementById('btn-salvar-v');
             if(btn) {
                 btn.disabled = true;

@@ -94,7 +94,15 @@
         {% endif %}
     });
 
-    document.getElementById('form-cadastro').addEventListener('submit', function() {
+    document.getElementById('form-cadastro').addEventListener('submit', function(e) {
+        if (!navigator.onLine) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+            addToSyncQueue(window.location.href, data, 'Cadastro: ' + data.nome);
+            return;
+        }
         const btn = document.getElementById('btn-salvar');
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> SALVANDO...';
