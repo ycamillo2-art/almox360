@@ -9,6 +9,7 @@
     <link rel="manifest" href="/static/manifest.json">
     <meta name="theme-color" content="#2e7d32">
     <style>
+        * { box-sizing: border-box; }
         :root {
             --primary-green: #2e7d32;
             --bg-light: #f4f7f6;
@@ -19,6 +20,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             overflow-x: hidden;
+            width: 100%;
         }
         
         /* Mobile Navbar */
@@ -140,32 +142,22 @@
             .sidebar-overlay.show { display: block; }
             .main-wrapper {
                 margin-left: 0;
-                width: 100vw;
+                width: 100%;
                 padding: 70px 10px 30px;
             }
-            .content-card { padding: 15px; border-radius: 12px; width: 100%; margin: 0; }
-            .dash-card { padding: 10px; height: 90px; margin-bottom: 10px; }
-            .card-val { font-size: 22px; margin-right: 8px; }
-            .card-label { font-size: 12px; }
-            .table-container { 
-                width: 100%;
-                overflow-x: auto; 
-                -webkit-overflow-scrolling: touch;
-            }
-            .table-almox { min-width: 600px; }
-            .table-almox th, .table-almox td { padding: 8px; font-size: 12px; }
-            
-            /* Stack forms on mobile */
-            .row > [class*="col-"] {
-                padding-left: 5px;
-                padding-right: 5px;
-            }
+            .content-card { padding: 15px; border-radius: 15px; width: 100%; }
+            .dash-card { padding: 15px; height: 100px; margin-bottom: 15px; }
+            .card-val { font-size: 24px; }
+            .table-container { width: 100%; overflow-x: auto; }
+            .table-almox th, .table-almox td { padding: 10px; font-size: 13px; }
         }
     </style>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/static/sw.js');
+                navigator.serviceWorker.register('/static/sw.js').then(reg => {
+                    console.log('SW registered');
+                });
             });
         }
     </script>
@@ -243,6 +235,10 @@
         {% endif %}
         
         {% block content %}{% endblock %}
+
+        <div class="text-center mt-5 mb-3" style="font-size: 10px; color: #ccc;">
+            ALMOX360 v1.2 | RD CONILON
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -273,19 +269,6 @@
         setTimeout(function() {
             $('.alert').fadeOut('slow');
         }, 5000);
-
-        // Confirmation for sensitive actions
-        document.querySelectorAll('form').forEach(form => {
-            if(form.getAttribute('method')?.toUpperCase() === 'POST' && !form.classList.contains('no-confirm')) {
-                form.addEventListener('submit', function(e) {
-                    if(this.querySelector('button[type="submit"]')?.classList.contains('btn-danger')) {
-                        if(!confirm('Tem certeza que deseja realizar esta operação?')) {
-                            e.preventDefault();
-                        }
-                    }
-                });
-            }
-        });
     </script>
     {% block extra_js %}{% endblock %}
 </body>
