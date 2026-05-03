@@ -1,8 +1,8 @@
 {
-  "name": "ALMOX360 RD",
-  "short_name": "Almox360",
+  "name": "Almox360 RD",
+  "short_name": "Almox",
   "description": "Sistema de Gestão RD CONILON",
-  "start_url": "/?v=133",
+  "start_url": "/?v=134",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#ffffff",
