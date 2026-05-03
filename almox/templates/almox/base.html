@@ -79,16 +79,7 @@
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="{% url 'cadastro' %}"><i class="fas fa-plus"></i> Cadastro</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="{% url 'movimentacao' %}"><i class="fas fa-exchange-alt"></i> Saída</a></li>
                     <li class="nav-item"><a class="nav-link nav-link-custom" href="{% url 'relatorios' %}"><i class="fas fa-file-alt"></i> Relatórios</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link nav-link-custom dropdown-toggle" href="#" id="navbarVeiculos" role="button" data-toggle="dropdown">
-                            <i class="fas fa-truck"></i> Veículos
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{% url 'veiculos' %}">Frotas</a>
-                            <a class="dropdown-item" href="{% url 'abastecimento' %}">Abastecimento</a>
-                            <a class="dropdown-item" href="{% url 'manutencao' %}">Manutenção</a>
-                        </div>
-                    </li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="{% url 'veiculos' %}"><i class="fas fa-truck"></i> Veículos</a></li>
                     <li class="nav-item">
                         <form action="{% url 'logout' %}" method="post" class="inline">
                             {% csrf_token %}
