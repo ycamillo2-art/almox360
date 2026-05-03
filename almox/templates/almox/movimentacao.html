@@ -1,20 +1,24 @@
 {% extends 'almox/base.html' %}
 
 {% block content %}
-<div class="main-card">
-    <h4 class="font-weight-bold mb-4"><i class="fas fa-sign-out-alt text-danger"></i> Registrar Saída de Material</h4>
+<div class="content-header mb-4">
+    <h3 class="font-weight-bold">Movimentação</h3>
+</div>
+
+<div class="content-card">
+    <h5 class="font-weight-bold mb-4"><i class="fas fa-sign-out-alt text-danger"></i> Registrar Saída de Material</h5>
     <form method="post" id="form-movimentacao">
         {% csrf_token %}
-        <div class="form-group">
+        <div class="form-group mb-4">
             <label class="font-weight-bold">Responsável pela Retirada</label>
-            <input type="text" name="responsavel" class="form-control form-control-lg" required placeholder="Nome do funcionário">
+            <input type="text" name="responsavel" class="form-control form-control-custom" required placeholder="Nome do funcionário">
         </div>
 
         <div id="itens-container">
             <div class="row item-linha mb-3">
                 <div class="col-md-8">
-                    <label>Produto</label>
-                    <select name="produto" class="form-control form-control-lg select-produto" required>
+                    <label class="font-weight-bold">Produto</label>
+                    <select name="produto" class="form-control form-control-custom select-produto" required>
                         <option value="">Selecione o produto...</option>
                         {% for p in produtos %}
                             <option value="{{ p.id }}">{{ p.codigo }} - {{ p.nome }} (Estoque: {{ p.saldo }})</option>
@@ -22,17 +26,17 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <label>Quantidade</label>
-                    <input type="text" name="quantidade" class="form-control form-control-lg" required placeholder="0.00">
+                    <label class="font-weight-bold">Quantidade</label>
+                    <input type="text" name="quantidade" class="form-control form-control-custom" required placeholder="0.00">
                 </div>
             </div>
         </div>
         
-        <button type="button" class="btn btn-outline-secondary mb-4" id="add-item">
+        <button type="button" class="btn btn-outline-secondary mb-4 btn-sm" id="add-item">
             <i class="fas fa-plus"></i> Adicionar outro item
         </button>
 
-        <button type="submit" class="btn btn-danger btn-custom w-100 py-3 font-weight-bold">CONFIRMAR SAÍDA</button>
+        <button type="submit" class="btn btn-danger btn-custom w-100 py-3 shadow-sm">CONFIRMAR SAÍDA</button>
     </form>
 </div>
 

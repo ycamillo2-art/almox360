@@ -1,62 +1,136 @@
 {% extends 'almox/base.html' %}
 
+{% block extra_css %}
+<style>
+    .dash-card {
+        border-radius: 15px;
+        padding: 25px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        margin-bottom: 25px;
+    }
+    .card-val { font-size: 32px; font-weight: 700; margin-right: 15px; }
+    .card-label { font-size: 14px; font-weight: 500; opacity: 0.9; line-height: 1.2; }
+    
+    .bg-cadastrados { background-color: #2e7d32; }
+    .bg-alerta { background-color: #fbc02d; color: #333 !important; }
+    .bg-em-uso { background-color: #2979ff; }
+    .bg-movimentacoes { background-color: #757575; }
+
+    .search-container { margin-bottom: 25px; }
+    .search-input {
+        border-radius: 12px;
+        padding: 12px 20px;
+        border: 1px solid #ddd;
+        width: 100%;
+        max-width: 400px;
+        background-color: white;
+    }
+
+    .table-container {
+        background: white;
+        border-radius: 20px;
+        padding: 5px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+    .table-almox { width: 100%; border-collapse: separate; border-spacing: 0; }
+    .table-almox th {
+        padding: 15px 20px;
+        font-weight: 600;
+        color: #555;
+        border-bottom: 2px solid #f0f0f0;
+        text-align: left;
+    }
+    .table-almox td {
+        padding: 15px 20px;
+        font-size: 14px;
+        color: #444;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    
+    /* Status Colors from Screenshot */
+    .row-ok { background-color: #e8f5e9 !important; }
+    .row-alerta { background-color: #fff9c4 !important; }
+    
+    .table-almox tr:hover { opacity: 0.9; cursor: pointer; }
+</style>
+{% endblock %}
+
 {% block content %}
 <div class="row">
-    <div class="col-md-4 mb-4">
-        <div class="main-card text-center">
-            <h5 class="text-muted">TOTAL DE ITENS</h5>
-            <h2 class="font-weight-bold" style="color: var(--primary-brown);">{{ total_itens }}</h2>
-            <i class="fas fa-box mt-2" style="font-size: 2rem; color: #d7ccc8;"></i>
+    <div class="col-md-3">
+        <div class="dash-card bg-cadastrados">
+            <span class="card-val">{{ total_itens }}</span>
+            <span class="card-label">Itens cadastrados</span>
         </div>
     </div>
-    <div class="col-md-4 mb-4">
-        <div class="main-card text-center" style="border-left: 5px solid #ef5350;">
-            <h5 class="text-muted">ESTOQUE CRÍTICO</h5>
-            <h2 class="font-weight-bold" style="color: #ef5350;">{{ itens_alerta }}</h2>
-            <i class="fas fa-exclamation-triangle mt-2" style="font-size: 2rem; opacity: 0.3;"></i>
+    <div class="col-md-3">
+        <div class="dash-card bg-alerta">
+            <span class="card-val">{{ itens_alerta }}</span>
+            <span class="card-label">Itens em alerta</span>
         </div>
     </div>
-    <div class="col-md-4 mb-4">
-        <div class="main-card text-center" style="border-left: 5px solid var(--secondary-green);">
-            <h5 class="text-muted">FERRAMENTAS EM USO</h5>
-            <h2 class="font-weight-bold" style="color: var(--secondary-green);">{{ ferramentas_em_uso }}</h2>
-            <i class="fas fa-tools mt-2" style="font-size: 2rem; opacity: 0.3;"></i>
+    <div class="col-md-3">
+        <div class="dash-card bg-em-uso">
+            <span class="card-val">{{ ferramentas_em_uso }}</span>
+            <span class="card-label">Ferramentas em uso</span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="dash-card bg-movimentacoes">
+            <span class="card-val">—</span>
+            <span class="card-label">Movimentações hoje</span>
         </div>
     </div>
 </div>
 
-<div class="main-card">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="font-weight-bold">Últimos Lançamentos</h4>
-        <a href="{% url 'cadastro' %}" class="btn btn-success-custom btn-custom">ADICIONAR PRODUTO</a>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Nome</th>
-                    <th>Saldo</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for p in produtos %}
-                <tr>
-                    <td><code>{{ p.codigo }}</code></td>
-                    <td>{{ p.nome }}</td>
-                    <td>{{ p.saldo }}</td>
-                    <td>
-                        {% if p.saldo <= p.minimo %}
-                            <span class="badge badge-danger p-2">CRÍTICO</span>
-                        {% else %}
-                            <span class="badge badge-success p-2">OK</span>
-                        {% endif %}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+<div class="search-container">
+    <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar produto">
 </div>
+
+<div class="table-container">
+    <table class="table-almox" id="productTable">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Saldo</th>
+                <th>Local</th>
+                <th>Mínimo</th>
+                <th>Obs</th>
+                <th>Uso</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in produtos %}
+            <tr class="{% if p.saldo <= p.minimo %}row-alerta{% else %}row-ok{% endif %}">
+                <td>{{ p.codigo }}</td>
+                <td class="font-weight-bold">{{ p.nome }}</td>
+                <td>{{ p.categoria }}</td>
+                <td>{{ p.saldo|floatformat:1 }}</td>
+                <td>{{ p.local }}</td>
+                <td>{{ p.minimo|floatformat:1 }}</td>
+                <td>{{ p.observacao|default:"-" }}</td>
+                <td>{{ p.em_uso|floatformat:1 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let value = this.value.toLowerCase();
+        let rows = document.querySelectorAll('#productTable tbody tr');
+        rows.forEach(row => {
+            row.style.display = row.innerText.toLowerCase().includes(value) ? '' : 'none';
+        });
+    });
+</script>
 {% endblock %}

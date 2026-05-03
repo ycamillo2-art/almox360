@@ -1,0 +1,4007 @@
+{
+    "produtos": [
+        {
+            "codigo": "12",
+            "nome": "LUVA DE REDUCAO 32 X25 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "15",
+            "nome": "JOELO 20 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "16",
+            "nome": "JOELHO ROSC/SOLD 25 X 1/2",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "17",
+            "nome": "BUCHA DE REDUCAO ROSCAVEL 1 X 1/2",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "21",
+            "nome": "ADAPTADOR INTERNO DE MANGUEIRA 1/2",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "23",
+            "nome": "ADAPTADOR INTERNO DE MANGUEIRA 1",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "24",
+            "nome": "CONECTOR PERFURANTE ISOLADO",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL ELETRICO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "25",
+            "nome": "VALVULA ESFERA SERIAL LIGEIRA  1\"",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "REGISTRO DE AR",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "27",
+            "nome": "JOELHO SOLDAVEL 100 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "28",
+            "nome": "JOELHO COM VISITA 100X50 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATRIAL DIRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "29",
+            "nome": "ADAPTADOR DE ROSCA 50 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "30",
+            "nome": "CAPS 100 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "32",
+            "nome": "TORNEIRA PRETA (PVC)",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "33",
+            "nome": "LIXA DE PAREDE 180",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "34",
+            "nome": "LIXA DE PAREDE 220",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "35",
+            "nome": "LIXA DE METAL 100",
+            "categoria": "DIVERSOS",
+            "saldo": "8.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "37",
+            "nome": "CURVA 90° 50MM",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "38",
+            "nome": "SERRINHA",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "39",
+            "nome": "LUVA SOLD. 150 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "40",
+            "nome": "ESTOPA",
+            "categoria": "DIVERSOS",
+            "saldo": "14.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "41",
+            "nome": "MICROTUBO (ROLOS)",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "42",
+            "nome": "ADESIVO PLASTICO VERMELHO",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "43",
+            "nome": "FITA VEDA ROSCA",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "44",
+            "nome": "VEDANTE LIQUIDO",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "45",
+            "nome": "CURVA 90° 32 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "46",
+            "nome": "CAPS 50 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "47",
+            "nome": "BUCHA DE REDUCAO 75 X60 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "48",
+            "nome": "T 75 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "49",
+            "nome": "T DE REDUCAO 100 X 50 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "50",
+            "nome": "FLANGE 75 X 2.1/2",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "51",
+            "nome": "ALICATE UNIVERSAL",
+            "categoria": "FERRAMENTA",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "FERRAMENTA",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "52",
+            "nome": "JOELHO 45° 250MM",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "53",
+            "nome": "BOMBA SUBMERSA",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "54",
+            "nome": "LANCA DE PUVERIZACAO",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "55",
+            "nome": "CHAPEL DE NAPOLEAO",
+            "categoria": "FERRAMENTA",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "56",
+            "nome": "LANCA COSTAL",
+            "categoria": "DIVERSOS",
+            "saldo": "8.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "57",
+            "nome": "BOMBA COSTAL",
+            "categoria": "FERRAMENTA",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "FERRAMENTA",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "58",
+            "nome": "CUBO DE CARRETA 6 FUROS",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "59",
+            "nome": "PROTETOR DE RODA",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "60",
+            "nome": "CCAMARA DE AR",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVCAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "61",
+            "nome": "MANGUEIRA DE ALTA PRESSAO",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "62",
+            "nome": "MANGUEIRA DE JARDIM 3/4",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "63",
+            "nome": "CAMARA DE AR CARRINHO DE MAO",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "64",
+            "nome": "RODA CARRINHO DE MAO",
+            "categoria": "DIVERSOS",
+            "saldo": "5.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "65",
+            "nome": "RODA COM PNEU CARRINHO DE MAO",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "66",
+            "nome": "CILINDRO HIDRAULICO DO ESTABILIZADOR",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "67",
+            "nome": "SPRAY MULTIUSO DECOR AZUL MEDIO BRILHANTE",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "68",
+            "nome": "PRENDEDOR DE CRACHAS (PCT)",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "69",
+            "nome": "GIS BRANCO (CX)",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "70",
+            "nome": "VEDANTE LIQUIDO TEKBOND",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "71",
+            "nome": "SILICONE",
+            "categoria": "DIVERSOS",
+            "saldo": "5.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "72",
+            "nome": "GRAXA ADESIVA",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "73",
+            "nome": "APLICADOR DE GRAXA TIPO ENGATE RAPIDO",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "74",
+            "nome": "FITA ISOLANTE DE ALTA TENSAO",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "75",
+            "nome": "FITA DUPLA FACE",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "14",
+            "nome": "REGISTRO 25 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "0.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "18",
+            "nome": "NIPLE DE ROCA",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "10",
+            "nome": "T 50 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "5.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "11",
+            "nome": "T REDUCAO 50 X 32 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "4",
+            "nome": "JOELHO SOLDAVEL 90° 32MM",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "2.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "20",
+            "nome": "UNIAO INTERNA DE MANQUEIRA 1",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "9",
+            "nome": "T REDUCAO 1 X 50 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "0.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "1",
+            "nome": "LUVA DE CORRER 150MM",
+            "categoria": "DIVERSOS",
+            "saldo": "5.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "2",
+            "nome": "LUVA DE CORRER 125 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "19",
+            "nome": "LUVA MISTA 32/ 1",
+            "categoria": "DIVERSOS",
+            "saldo": "0.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "31",
+            "nome": "VENTOSA 1\"",
+            "categoria": "DIVERSOS",
+            "saldo": "0.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "36",
+            "nome": "REGISTRO DE ESFERA SOLD. 50MM",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "26",
+            "nome": "GROSA",
+            "categoria": "FERRAMENTA",
+            "saldo": "0.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "FERRAMENTA",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "3",
+            "nome": "LUVA SOLDAVEL 125 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "0.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "5",
+            "nome": "JOELHO SOLDAVEL 90° 50MM",
+            "categoria": "DIVERSOS",
+            "saldo": "13.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "7",
+            "nome": "LUVA DE REDUCAO 50X32 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "51.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "13",
+            "nome": "BUCHA DE REDUCAO 32 X 25 MM",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "76",
+            "nome": "CIMENTO EXTRAFORTE",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "77",
+            "nome": "VF2600",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "78",
+            "nome": "GRAFITE EM PO",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "79",
+            "nome": "SACOLA PARA AMOSTRA",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "80",
+            "nome": "BOTAO DUPLO ILUMINADO",
+            "categoria": "DIVERSOS",
+            "saldo": "9.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "81",
+            "nome": "DISJUNTOR D80",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "VERIFICAR QUANTIDADE",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "82",
+            "nome": "REFLETOR",
+            "categoria": "DIVERSOS",
+            "saldo": "10.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBRSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "83",
+            "nome": "CORREA LISA B100",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "84",
+            "nome": "CORREA DENTADA BX 80",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "85",
+            "nome": "CORREA DENTADA BX50",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "86",
+            "nome": "CORREA DENTADA AX 32",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "87",
+            "nome": "CORREA DENTADA AX 66",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "88",
+            "nome": "CORREA DENTADA BX 75",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "89",
+            "nome": "CORREA LISA B 40",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "90",
+            "nome": "CORREA LISA B 63",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "91",
+            "nome": "CORREA LISA B 65",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "92",
+            "nome": "CORREA LISA B 84",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "93",
+            "nome": "CORREA LISA B 29",
+            "categoria": "DIVERSOS",
+            "saldo": "8.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "94",
+            "nome": "CORREA LISA B 80",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "95",
+            "nome": "CORREA LISA B 53",
+            "categoria": "DIVERSOS",
+            "saldo": "8.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "96",
+            "nome": "CORREA LISA B 48",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "97",
+            "nome": "CORREA LISA B 50",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "98",
+            "nome": "CORREA LISA B 57",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "99",
+            "nome": "CORREA LISA B 66",
+            "categoria": "DIVERSOS",
+            "saldo": "6.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "100",
+            "nome": "CORREA LISA B 68",
+            "categoria": "DIVERSOS",
+            "saldo": "10.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "101",
+            "nome": "CORREA LISA B 75",
+            "categoria": "DIVERSOS",
+            "saldo": "1.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "102",
+            "nome": "CORREA LISA B 85",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "103",
+            "nome": "CORREA LISA B 87",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "104",
+            "nome": "CORREA LISA B 90",
+            "categoria": "DIVERSOS",
+            "saldo": "18.0",
+            "local": "ALMOX 1",
+            "minimo": "5.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "105",
+            "nome": "CORREA LISA B 100",
+            "categoria": "DIVERSOS",
+            "saldo": "6.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "106",
+            "nome": "CORREA LISA B 101",
+            "categoria": "DIVERSOS",
+            "saldo": "6.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "107",
+            "nome": "CORREA LISA B 116",
+            "categoria": "Diversos",
+            "saldo": "11.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "108",
+            "nome": "CORREA LISA B 117",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "109",
+            "nome": "CORREA LISA B 120",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "110",
+            "nome": "CORREA LISA B 118",
+            "categoria": "Diversos",
+            "saldo": "12.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "111",
+            "nome": "CORREA LISA B 122",
+            "categoria": "Diversos",
+            "saldo": "9.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "112",
+            "nome": "CORREA LISA B 124",
+            "categoria": "Diversos",
+            "saldo": "8.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "113",
+            "nome": "CORREA LISA B 125",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "114",
+            "nome": "CORREA LISA A 80",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "115",
+            "nome": "CORREA LISA A 66",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "116",
+            "nome": "CORREA LISA A 54",
+            "categoria": "Diversos",
+            "saldo": "6.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "117",
+            "nome": "CORREA LISA A 46",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "118",
+            "nome": "CORREA LISA A 42",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "119",
+            "nome": "CORREA LISA A 85",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "120",
+            "nome": "CORREA LISA A 32",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "121",
+            "nome": "BUCHA DE ROLAMENTO HE 317",
+            "categoria": "Diversos",
+            "saldo": "7.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "122",
+            "nome": "BUCHA DE ROLAMENTO HE 311",
+            "categoria": "Diversos",
+            "saldo": "13.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "123",
+            "nome": "BUCHA DE ROLAMENTO HE 308",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "124",
+            "nome": "BUCHA DE ROLAMENTO HE 313",
+            "categoria": "Diversos",
+            "saldo": "6.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "125",
+            "nome": "BUCHA DE ROLAMENTO HE 309",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "126",
+            "nome": "BUCHA DE ROLAMENTO HE 310",
+            "categoria": "Diversos",
+            "saldo": "5.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "127",
+            "nome": "BUCHA DE ROLAMENTO HE 2311",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "128",
+            "nome": "ROLAMENTO 1213 KTVH-C3",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "129",
+            "nome": "ROLAMENTO 22217CCKW33C3",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "130",
+            "nome": "ROLAMENTO 2210KC3",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "131",
+            "nome": "ROLAMENTO 22213 KC3",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "132",
+            "nome": "ROLAMENTO UC207",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "133",
+            "nome": "ROLAMENTO 22211CCKW 33 C3",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "4.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "134",
+            "nome": "ROLAMENTO 2208 KC3",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "135",
+            "nome": "ROLAMENTO 22209 CAKW 33C3",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "136",
+            "nome": "ROLAMENTO UC 211-32",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "138",
+            "nome": "ROLAMENTO 2211 KC3",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "139",
+            "nome": "ROLAMENTO UK 211",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "140",
+            "nome": "ROLAMENTO 22209 KMC3W33",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "141",
+            "nome": "ROLAMENTO 22211 EAKEH",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "142",
+            "nome": "ROLAMENTO 22213 EAKEH",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "143",
+            "nome": "ROLAMENTO 22213 KEJW33",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "144",
+            "nome": "ROLAMENTO YAR 210-200 2F",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "145",
+            "nome": "ROLAMENTO 6306-2Z-C3-HLH",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "146",
+            "nome": "ROLAMENTO 22211CCKW33C3",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "147",
+            "nome": "ROLAMENTO 22210 CDKE4C3",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "148",
+            "nome": "ROLAMENTO 22211KCCC3W33",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "149",
+            "nome": "ROLAMENTO 1210 KC3",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "150",
+            "nome": "ROLAMENTO 22211-E1-XL-K",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "151",
+            "nome": "MOTOR REDUTOR 4HP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "152",
+            "nome": "MOTO 7,5 HP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "153",
+            "nome": "MOTOR 2 HP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "154",
+            "nome": "MOTOR REDUTOR 7,5 HP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "155",
+            "nome": "MOTOR 1,20 HP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "156",
+            "nome": "CHAVE DE BOCA / ESTRIA 22",
+            "categoria": "Ferramenta",
+            "saldo": "3.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "157",
+            "nome": "CHAVE DE BOCA / ESTRIA 1 X 1/2",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "159",
+            "nome": "CHAVE DE BOCA / ESTRIA 19",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "160",
+            "nome": "CHAVE DE BOCA / ESTRIA",
+            "categoria": "Ferramenta",
+            "saldo": "2.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "161",
+            "nome": "CHAVE DE BOCA / ESTRIA 21",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "162",
+            "nome": "CHAVE DE BOCA / ESTRIA 3/4",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "163",
+            "nome": "CHAVE DE BOCA / ESTRIA 27",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "164",
+            "nome": "CHAVE DE BOCA / ESTRIA 7/8",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "165",
+            "nome": "CHAVE DE BOCA / ESTRIA 11/16",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "166",
+            "nome": "CHAVE DE BOCA / ESTRIA 1/2",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "168",
+            "nome": "CHAVE DE BOCA / ESTRIA 11",
+            "categoria": "Ferramenta",
+            "saldo": "3.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "169",
+            "nome": "CHAVE DE BOCA / ESTRIA 9",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "170",
+            "nome": "CHAVE DE BOCA / ESTRIA 15",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "171",
+            "nome": "CHAVE DE BOCA / ESTRIA 5/8",
+            "categoria": "Ferramenta",
+            "saldo": "0.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "172",
+            "nome": "CHAVE DE BOCA / ESTRIA 16",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "173",
+            "nome": "CHAVE ESTRIA 28",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "174",
+            "nome": "CHAVE ESTRIA 25/28",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "175",
+            "nome": "CHAVE ESTRIA 18/19",
+            "categoria": "Ferramenta",
+            "saldo": "2.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "176",
+            "nome": "CHAVE ESTRIA 16/17",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "177",
+            "nome": "CHAVE ESTRIA 14/15",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "178",
+            "nome": "CHAVE ESTRIA 24/26",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "179",
+            "nome": "CHAVE ESTRIA 20/22",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "180",
+            "nome": "CHAVE ESTRIA 6/7",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "181",
+            "nome": "CHAVE ESTRIA 8/9",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "182",
+            "nome": "CHAVE ESTRIA 9/16 X 1/2",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "183",
+            "nome": "CHAVE DE BOCA 14/15",
+            "categoria": "Ferramenta",
+            "saldo": "3.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "184",
+            "nome": "CHAVE DE BOCA 19/18",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "185",
+            "nome": "CHAVE DE BOCA 25/28",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "186",
+            "nome": "CHAVE PHILIPS",
+            "categoria": "Ferramenta",
+            "saldo": "6.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "VERIFICAR NA MALETA DO SECADOR",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "187",
+            "nome": "CHAVE DE FENDA",
+            "categoria": "Ferramenta",
+            "saldo": "2.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "VERIFICAR NA MALETA DO SECADOR",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "188",
+            "nome": "ALICATE DE PRESSÃO",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "VERIFICAR NA MALETA DO SECADOR",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "189",
+            "nome": "CHAVE DE CORRENTE",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "VERIFICAR NA MALETA DO SECADOR",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "191",
+            "nome": "CACHIMBO CHAVE DE CATRACA 13",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "193",
+            "nome": "CHAVE DE BOCA / ESTRIA 14",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "194",
+            "nome": "CHAVE DE BOCA / ESTRIA 15",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "195",
+            "nome": "CHAVE DE BOCA /ESTRIA 10",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "196",
+            "nome": "CHAVE DE BOCA / ESTRIA 8",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "197",
+            "nome": "CHAVE DE BOCA / ESTRIA 20",
+            "categoria": "Ferramenta",
+            "saldo": "2.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "198",
+            "nome": "CHAVE DE BOCA / ESTRIA 7",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "199",
+            "nome": "FURADEIRA SEM FIO BOSH",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "200",
+            "nome": "TARRAXA MANUAL VONDER",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "201",
+            "nome": "FURADEIRA DE IMPACTO BOSH GBS 20-2",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "202",
+            "nome": "PARAFUSADEIRA CINHELL",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "203",
+            "nome": "POLITRIZ DEWALT 20AMP",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "204",
+            "nome": "POLITRIZ CINHELL 10AMP",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "205",
+            "nome": "FURADEIRA DE IMPACTO BOSH 908",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "206",
+            "nome": "FURADEIRA BOSH 684",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "207",
+            "nome": "FURADEIRA BOSH GBS13",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "208",
+            "nome": "ESMERILHADEIRA ANGULAR 115MM DEWALT",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "209",
+            "nome": "MOTOSERRA",
+            "categoria": "Ferramenta",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "210",
+            "nome": "MÁQUINA DE SOLDA TOUCH 250",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "211",
+            "nome": "ROSSADEIRA ELÉTRICA",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "212",
+            "nome": "MÁQUINA DE SOLDA TOUCH 300",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "213",
+            "nome": "ÓLEO DE MOTOR",
+            "categoria": "Diversos",
+            "saldo": "1.6",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "214",
+            "nome": "TEXAMATIC B",
+            "categoria": "Diversos",
+            "saldo": "6.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "215",
+            "nome": "UNIVERSAL EP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "216",
+            "nome": "POTENZA",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "217",
+            "nome": "YANMAR",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "218",
+            "nome": "LUBRIFICANTE DE MOTOR AMBRA",
+            "categoria": "Diversos",
+            "saldo": "1.5",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "219",
+            "nome": "URANIA",
+            "categoria": "Diversos",
+            "saldo": "1.1",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "220",
+            "nome": "SYNTIUM",
+            "categoria": "Diversos",
+            "saldo": "13.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "221",
+            "nome": "DULUB MAX P",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "222",
+            "nome": "CMP AW 150",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "223",
+            "nome": "BAR DAHL",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "224",
+            "nome": "AMBRA ÓLEO MINERAL PARA FREIOS",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "225",
+            "nome": "HIDRAMAX AW",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "192",
+            "nome": "ALONGADOR CHAVE DE CATRACA",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "VERIFICAR NA MALETA DO SECADOR",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "190",
+            "nome": "CHAVE DE CATRACA",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "VERIFICAR NA MALETA DO SECADOR",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "226",
+            "nome": "TUTELA FLUIDO MINERAL PARA FREIOS",
+            "categoria": "Diversos",
+            "saldo": "5.5",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "227",
+            "nome": "PRESSURE ÓLEO PARA COMPRESSOR",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "228",
+            "nome": "MÓBIL SUPER 10W40",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "229",
+            "nome": "RADNAQ DOT 4",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "230",
+            "nome": "LUBRAX TURBO",
+            "categoria": "Diversos",
+            "saldo": "500.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "231",
+            "nome": "MÓBIL SUPER MOTO 20W40 4t",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "232",
+            "nome": "ÓLEO PARA MOTOR DE MOTOSSERRA",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "233",
+            "nome": "WITHE LUB",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "234",
+            "nome": "VASILINA SOLIDA BRANCA",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "235",
+            "nome": "PASTA PARA MONTAGEM DE PNEUS",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "236",
+            "nome": "OLEO PARA TRANSMISSÃO YANMAR 1L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "237",
+            "nome": "ARLA 20L",
+            "categoria": "Diversos",
+            "saldo": "11.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "238",
+            "nome": "TEXSA TDF FLUIDO MULTIFUNCIONAL 20L",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "239",
+            "nome": "DULUB RBM 320 20L",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "240",
+            "nome": "LUBRAX GERAR 320 20L",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "241",
+            "nome": "TECH ST ESTACIONARIO 40 20L",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "242",
+            "nome": "TEXSA HIDRÁULICO HD-HL 68 20L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "243",
+            "nome": "DUNAX HIDRÁULICO HL-DIN 51524 20L",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "244",
+            "nome": "UNIX HIDRAX C LUBRIFICANTE ADITIVADO 20L",
+            "categoria": "Diversos",
+            "saldo": "5.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "245",
+            "nome": "LUBRAX GL5-90 BD 20L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "246",
+            "nome": "LUBRAX BETUMEM 18KG",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "247",
+            "nome": "GRAXA STARPLEX EP2 20KG",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "248",
+            "nome": "GRAXA ALTA TEMPERATURA MOBIL 20KG",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "249",
+            "nome": "UNI MULTIGERO GL5 20 L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "250",
+            "nome": "URANIA OLÉO MINERAL PARA MOTOR A DISEL 15w40",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "251",
+            "nome": "ISA FLUIDO 10W30 20L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "252",
+            "nome": "MAX TDH MT6 10W30 20L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "253",
+            "nome": "URSA ÓLEO DE ALTO DESEMPENHO 15W40 20 L",
+            "categoria": "Diversos",
+            "saldo": "8.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "254",
+            "nome": "MÓBIL DELVAC ÓLEO MINERAL PARA MOTOR A DISEL 20L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "255",
+            "nome": "DUAL GOLD 20L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "256",
+            "nome": "PETRONA OLEO PARA FREIOS 1L",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "257",
+            "nome": "FILTRO COMBUSTÍVEL WK 1060/4 ",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "258",
+            "nome": "FILTRO DE AR ASR 223",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "259",
+            "nome": "FILTRO DE COMBUSTÍVEL MERCEDEZ KX67/2",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "260",
+            "nome": "FILTRO DE ÓLEO",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "261",
+            "nome": "FILTRO DE COMBUSTÍVEL",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "262",
+            "nome": "FILTRO HIDRÁULICO",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "263",
+            "nome": "FILTRO COMBUSTÍVEL PSC 499",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "264",
+            "nome": "FILTRO DE COMBUSTÍVEL PEC3022",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "265",
+            "nome": "FILTRO ÓLEO LUBRIFICANTE PSL 619",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "266",
+            "nome": "FILTRO COMBUSTÍVEL PSC999",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "267",
+            "nome": "FILTRO DE COMBUSTÍVEL G103/01",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "268",
+            "nome": "FILTRO DE COMBUSTÍVEL SEPARADOR DE ÁGUA",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "269",
+            "nome": "FILTRO LUBRIFICANTE",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "270",
+            "nome": "FILTRO DE COMBUSTÍVEL",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "271",
+            "nome": "FILTRO DO DISEL C4163",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "272",
+            "nome": "FILTRO DE ÓLEO LUBRIFICANTE H932/4",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "273",
+            "nome": "FILTRO DE ÓLEO LUBRIFICANTE PU1046X",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "274",
+            "nome": "FILTRO DE COMBUSTÍVEL 1060/4",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "275",
+            "nome": "FILTRO DE ÓLEO HU945/2X",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "276",
+            "nome": "FILTRO DE ÓLEO LUBRIFICANTE H1271",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "277",
+            "nome": "FILTRO HIDRÁULICO",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "278",
+            "nome": "FILTRO DE ÓLEO",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "279",
+            "nome": "BOMBA INJETORA 2/255",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "280",
+            "nome": "FILTRO DESUMIDIFICADOR",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "281",
+            "nome": "FILTRO HIDRÁULICO IVECO",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "282",
+            "nome": "FILTRO DE AR (ELEMENTO PRINCIPAL)",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "283",
+            "nome": "FILTRO DE AR",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "284",
+            "nome": "FILTRO DE COMBUSTÍVEL 66R",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "285",
+            "nome": "KIT ELEMENTO FILTRANTE 66R",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "286",
+            "nome": "FILTRO DE ÓLEO LB123",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "287",
+            "nome": "FILTRO DE COMBUSTÍVEL FBD496 - FBD2230",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "288",
+            "nome": "FILTRO DE CABINE",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "289",
+            "nome": "FILTRO DE AR CAMINHÃO",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "290",
+            "nome": "FILTRO DE AR UK51S",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "291",
+            "nome": "ELEMENTO FILTRANTE",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "292",
+            "nome": "FILTRO DE AR",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "293",
+            "nome": "MASSA DE POLIR",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "294",
+            "nome": "CONVERTEDOR DE FERRUGEM 1L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "295",
+            "nome": "CONVERTEDOR DE FERRUGEM TF7 200ML",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "296",
+            "nome": "ADESIVO PARA JUNTAS DE MOTORES A DISEL",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "297",
+            "nome": "DISCO FLAP 4-12X7/8",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "298",
+            "nome": "BOINA DE POLIMENTO DE LÃ (G)",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "299",
+            "nome": "BOINA DE POLIMENTO DE LÃ (M)",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "300",
+            "nome": "BOINA DE POLIMENTO DE LÃ (P)",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "301",
+            "nome": "FUNDO CONVERTEDOR DE FERRUGEM P.C.F",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "302",
+            "nome": "DISCO DE DESBASTE 115MM",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "303",
+            "nome": "DISCO DE DESBASTE 7X1/4 X 7/8",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "304",
+            "nome": "TOMADA 2P+T 10AMP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "305",
+            "nome": "TOMADA 2P+T 20AMP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "306",
+            "nome": "LÂMPADA LED 40W",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "307",
+            "nome": "LIXA PARA ESMERILHADEIRA (P) G:125",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "308",
+            "nome": "LIXA PARA ESMERILHADEIRA (P) G:50",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "309",
+            "nome": "LIXA PARA ESMERILHADEIRA (G) G:80 PARA FERRO",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "310",
+            "nome": "DISCO DE CORTE INOX EXTRA 180X1,6X22,20",
+            "categoria": "Diversos",
+            "saldo": "23.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "311",
+            "nome": "DISCO DE CORTE FINO 180X1,6 X 22,20",
+            "categoria": "Diversos",
+            "saldo": "10.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "312",
+            "nome": "CATALISADOR VIPAL 50ML",
+            "categoria": "Diversos",
+            "saldo": "10.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "313",
+            "nome": "EIXO DE ENGRENAGEM (VERIFICAR O MODELO)",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "314",
+            "nome": "DISJUNTOR C32",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "315",
+            "nome": "LÂMPADA AUTOMOTIVA HALÓGENA 24V",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "316",
+            "nome": "SENSOR DE TEMPERATURA PAINEL 3197",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "317",
+            "nome": "DETERGENTE SUPER CONCENTRADO",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "318",
+            "nome": "CRUZETA DE CARDAM STAHL",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "319",
+            "nome": "POLIA A72",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "320",
+            "nome": "POLIA 3B 120",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "321",
+            "nome": "ESCOVA DE AÇO 100MM",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "322",
+            "nome": "ESCOVA DE AÇO TRANÇADO 100MM",
+            "categoria": "Diversos",
+            "saldo": "5.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "324",
+            "nome": "FITA HELLERMAN (G)",
+            "categoria": "Diversos",
+            "saldo": "30.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "325",
+            "nome": "FITA HELLERMAN (P)",
+            "categoria": "Diversos",
+            "saldo": "50.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "326",
+            "nome": "BLOCO DE ESPUMA",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "327",
+            "nome": "CAPACETE DE SOLDA",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "328",
+            "nome": "ROLAMENTO UC210-32",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "329",
+            "nome": "ROLAMENTO 32208",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "330",
+            "nome": "ROLAMENTO 30206",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "331",
+            "nome": "ANEL DE VEDAÇÃO CNH",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "332",
+            "nome": "TIRANTE BRAÇO DE RETROVISOR MB1",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "333",
+            "nome": "GRAMPOS BELGO (CERCA)",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "334",
+            "nome": "MANTA TÉRMICA ALUMINIZADA",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "335",
+            "nome": "TRAVA ROSCA 10ML",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "336",
+            "nome": "FITA ISOLANTE AULTA TENSÃO",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "337",
+            "nome": "ELETROUDO 5MM",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "338",
+            "nome": "ELETROUDO 4MM",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "339",
+            "nome": "LED REFLETOR SLIN",
+            "categoria": "Diversos",
+            "saldo": "5.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "340",
+            "nome": "ARAME LISO",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "341",
+            "nome": "ÁGUA DESMINERALIZADA 1L",
+            "categoria": "Diversos",
+            "saldo": "11.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "342",
+            "nome": "CORRENTE PARA MOTOSSERRA",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "343",
+            "nome": "QUEROSENE 900ML",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "344",
+            "nome": "AGUARRÁS 900ML",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "345",
+            "nome": "SPRAY PRETO FOSCO",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "346",
+            "nome": "ESMALTE SINTÉTICO PRETO 225ML",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "347",
+            "nome": "ESMALTE SINTÉTICO AZUL DELL REY 225ML",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "348",
+            "nome": "ADESIVO DE CONTATO 195G (VENCIDO)",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "349",
+            "nome": "ADESIVO COLABRAS 195G (VENCIDO)",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "350",
+            "nome": "VEDANTE LÍQUIDO TEK BOND",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "351",
+            "nome": "CABO PARA CHUPETA",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "352",
+            "nome": "THINNER",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "353",
+            "nome": "BATERIA MOURA M150BD",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "354",
+            "nome": "BATERIA MOURA M100HE",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "355",
+            "nome": "BATERIA TOYOTA 375LN3",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "356",
+            "nome": "BATERIA HELIAR HNP60HP",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "357",
+            "nome": "BATERIA HELIAR HTZ6L",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "358",
+            "nome": "BATERIA ERBS ERX6BS",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "359",
+            "nome": "BATERIA MOURA MA5-D",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "360",
+            "nome": "EXTENSÃO",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "361",
+            "nome": "VALVULA SOLENOIDE",
+            "categoria": "Diversos",
+            "saldo": "5.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "362",
+            "nome": "CORREA MERCEDES 1369",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "363",
+            "nome": "CORREA MERCEDES 1939",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "364",
+            "nome": "CORREA CNH AV 10X1135",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "365",
+            "nome": "CORREA B103",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "366",
+            "nome": "CORREA C51",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "367",
+            "nome": "CORREA CNH 98473706",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "368",
+            "nome": "CORREA B 29",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "369",
+            "nome": "CORREA BX53",
+            "categoria": "Diversos",
+            "saldo": "8.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "370",
+            "nome": "CORREA B64",
+            "categoria": "Diversos",
+            "saldo": "3.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "371",
+            "nome": "CORREA A42",
+            "categoria": "Diversos",
+            "saldo": "4.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "372",
+            "nome": "CORREA TRAPEZOIDAL AVX 13X1020",
+            "categoria": "Diversos",
+            "saldo": "2.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "373",
+            "nome": "CORREA AX531",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "374",
+            "nome": "CORREA B75",
+            "categoria": "Diversos",
+            "saldo": "6.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "FER-0001",
+            "nome": "teste de sistema final",
+            "categoria": "FERRAMENTAS",
+            "saldo": "10.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "FER-0002",
+            "nome": "YAGO DE SOUZA CAMILLO",
+            "categoria": "FERRAMENTAS",
+            "saldo": "10.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "FER-0003",
+            "nome": "teste de cadastro",
+            "categoria": "FERRAMENTAS",
+            "saldo": "10.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "teste cadastro",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "DIV-0001",
+            "nome": "luva de borracha",
+            "categoria": "DIVERSOS",
+            "saldo": "19.0",
+            "local": "ALMOX 1",
+            "minimo": "3.0",
+            "observacao": "uso para veneno",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "DIV-0002",
+            "nome": "oculos de proteção",
+            "categoria": "DIVERSOS",
+            "saldo": "12.0",
+            "local": "ALMOX 1",
+            "minimo": "3.0",
+            "observacao": "oculos transparente ",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "DIV-0003",
+            "nome": "capa de chuva",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "DIV-0004",
+            "nome": "EPI para veneno",
+            "categoria": "DIVERSOS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "tamanho M",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "DIV-0005",
+            "nome": "EPI para veneno TAMANHO G",
+            "categoria": "DIVERSOS",
+            "saldo": "2.0",
+            "local": "ALMOX 1",
+            "minimo": "2.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "DIV-0006",
+            "nome": "rolamento 22211 KCJW33C2",
+            "categoria": "DIVERSOS",
+            "saldo": "6.0",
+            "local": "ALMOX 1",
+            "minimo": "2.0",
+            "observacao": "ROLAMENTO ROLO DE 180",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "167",
+            "nome": "CHAVE DE BOCA / ESTRIA 13",
+            "categoria": "Ferramenta",
+            "saldo": "2.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "FER-0004",
+            "nome": "teste de cadastro 2",
+            "categoria": "FERRAMENTAS",
+            "saldo": "10.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "teste",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "8",
+            "nome": "CONEXAO RETA PNEUMATICA",
+            "categoria": "DIVERSOS",
+            "saldo": "3.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "6",
+            "nome": "ANEL DE VEDACAO 50 / 1\\2",
+            "categoria": "DIVERSOS",
+            "saldo": "0.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "323",
+            "nome": "CRUZETA DE CARDAM NAKATA",
+            "categoria": "Diversos",
+            "saldo": "0.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBSERVAÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "22",
+            "nome": "ADAPTADOR INTERNO DE MANGUEIRA 1/2 X 3/4",
+            "categoria": "DIVERSOS",
+            "saldo": "0.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "MATERIAL DE IRRIGACAO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "137",
+            "nome": "ROLAMENTO 2210 KC3 2",
+            "categoria": "Diversos",
+            "saldo": "1.0",
+            "local": "Almox 1",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "158",
+            "nome": "CHAVE DE BOCA / ESTRIA 36",
+            "categoria": "Ferramenta",
+            "saldo": "1.0",
+            "local": "Almox 2",
+            "minimo": "1.0",
+            "observacao": "SEM OBISERVÇÃO",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "DIV-0007",
+            "nome": "teste de cadastro 5",
+            "categoria": "DIVERSOS",
+            "saldo": "7.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "DIV-0008",
+            "nome": "teste de cadastro 15",
+            "categoria": "DIVERSOS",
+            "saldo": "20.0",
+            "local": "ALMOX 1",
+            "minimo": "5.0",
+            "observacao": "",
+            "em_uso": "0"
+        },
+        {
+            "codigo": "FER-0005",
+            "nome": "teste de sistema final5",
+            "categoria": "FERRAMENTAS",
+            "saldo": "10.0",
+            "local": "ALMOX 2",
+            "minimo": "2.0",
+            "observacao": "teste final",
+            "em_uso": "0.0"
+        },
+        {
+            "codigo": "FER-0006",
+            "nome": "teste de sistema final 10",
+            "categoria": "FERRAMENTAS",
+            "saldo": "4.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "",
+            "em_uso": "6.0"
+        },
+        {
+            "codigo": "DIV-0009",
+            "nome": "teste de sincronzação",
+            "categoria": "DIVERSOS",
+            "saldo": "8.0",
+            "local": "ALMOX 1",
+            "minimo": "1.0",
+            "observacao": "teste ",
+            "em_uso": "0.0"
+        }
+    ],
+    "historico": [
+        {
+            "produto": "158 - CHAVE DE BOCA / ESTRIA 36",
+            "tipo": "Ferramenta",
+            "quantidade": "1.0",
+            "responsavel": "yago ",
+            "saldo_anterior": "1.0",
+            "saldo_atual": "0.0",
+            "local": "Almox 2",
+            "devolvido": "SIM",
+            "data": "2026-03-19 08:11:18.571207"
+        },
+        {
+            "produto": "190 - CHAVE DE CATRACA",
+            "tipo": "Ferramenta",
+            "quantidade": "1.0",
+            "responsavel": "yago ",
+            "saldo_anterior": "1.0",
+            "saldo_atual": "0.0",
+            "local": "Almox 2",
+            "devolvido": "SIM",
+            "data": "2026-03-19 08:11:18.562638"
+        },
+        {
+            "produto": "DIV-0007 - teste de cadastro 5",
+            "tipo": "DIVERSOS",
+            "quantidade": "6.0",
+            "responsavel": "yago",
+            "saldo_anterior": "7.0",
+            "saldo_atual": "1.0",
+            "local": "ALMOX 1",
+            "devolvido": "SIM",
+            "data": "2026-03-19 11:27:56.921492"
+        },
+        {
+            "produto": "DIV-0008 - teste de cadastro 15",
+            "tipo": "DIVERSOS",
+            "quantidade": "20.0",
+            "responsavel": "yago",
+            "saldo_anterior": "20.0",
+            "saldo_atual": "0.0",
+            "local": "ALMOX 1",
+            "devolvido": "SIM",
+            "data": "2026-03-19 11:27:56.921492"
+        },
+        {
+            "produto": "FER-0005 - teste de sistema final5",
+            "tipo": "FERRAMENTAS",
+            "quantidade": "5.0",
+            "responsavel": "marcos",
+            "saldo_anterior": "10.0",
+            "saldo_atual": "5.0",
+            "local": "ALMOX 2",
+            "devolvido": "SIM",
+            "data": "2026-03-19 09:32:55.270438"
+        },
+        {
+            "produto": "FER-0006 - teste de sistema final 10",
+            "tipo": "FERRAMENTAS",
+            "quantidade": "3.0",
+            "responsavel": "marcos",
+            "saldo_anterior": "4.0",
+            "saldo_atual": "1.0",
+            "local": "ALMOX 1",
+            "devolvido": "SIM",
+            "data": "2026-03-19 09:32:55.267623"
+        },
+        {
+            "produto": "13 - BUCHA DE REDUCAO 32 X 25 MM",
+            "tipo": "DIVERSOS",
+            "quantidade": "1.0",
+            "responsavel": "yago",
+            "saldo_anterior": "2.0",
+            "saldo_atual": "1.0",
+            "local": "ALMOX 1",
+            "devolvido": "NÃO",
+            "data": "2026-03-19 16:28:01.931155"
+        },
+        {
+            "produto": "DIV-0009 - teste de sincronzação",
+            "tipo": "DIVERSOS",
+            "quantidade": "2.0",
+            "responsavel": "marcos",
+            "saldo_anterior": "10.0",
+            "saldo_atual": "8.0",
+            "local": "ALMOX 1",
+            "devolvido": "NÃO",
+            "data": "2026-03-19 16:47:36.185252"
+        }
+    ],
+    "veiculos": [
+        {
+            "veiculo": "KOMBI",
+            "ultima_manutencao": "2026-03-12",
+            "proxima_manutencao": "2026-03-27",
+            "tipo_servico": "troca de oleo",
+            "usuario": "yago camillo"
+        },
+        {
+            "veiculo": "KOMBI",
+            "ultima_manutencao": "2026-03-12",
+            "proxima_manutencao": "2026-03-20",
+            "tipo_servico": "troca de oleo",
+            "usuario": "yago camillo"
+        },
+        {
+            "veiculo": "TOYOTA BANDEIRANTE ",
+            "ultima_manutencao": "2026-03-19",
+            "proxima_manutencao": "2026-03-21",
+            "tipo_servico": "troca de oleo",
+            "usuario": "yago camillo"
+        }
+    ]
+}
