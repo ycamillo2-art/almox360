@@ -270,7 +270,7 @@
         {% block content %}{% endblock %}
 
         <div class="text-center mt-5 mb-3" style="font-size: 10px; color: #ccc;">
-            ALMOX360 v1.4.0 | RD CONILON
+            ALMOX360 v1.4.1 | RD CONILON
         </div>
     </div>
 
@@ -299,15 +299,25 @@
 
         async function processSyncQueue() {
             if (!navigator.onLine) return;
-            const items = await db.syncQueue.toArray();
-            if (items.length === 0) return;
+            try {
+                const items = await db.syncQueue.toArray();
+                if (items.length === 0) return;
 
-            console.log("Sincronizando dados pendentes...");
-            for (const item of items) {
-                try {
+                console.log("Sincronizando dados pendentes...");
+                for (const item of items) {
+                    const params = new URLSearchParams();
+                    // Garante que arrays (múltiplos produtos) sejam tratados corretamente
+                    for (const key in item.data) {
+                        if (Array.isArray(item.data[key])) {
+                            item.data[key].forEach(val => params.append(key, val));
+                        } else {
+                            params.append(key, item.data[key]);
+                        }
+                    }
+
                     const response = await fetch(item.url, {
                         method: 'POST',
-                        body: new URLSearchParams(item.data),
+                        body: params,
                         headers: {
                             'X-CSRFToken': item.data.csrfmiddlewaretoken,
                             'Content-Type': 'application/x-www-form-urlencoded'
@@ -317,12 +327,9 @@
                         await db.syncQueue.delete(item.id);
                         console.log("Sincronizado: " + item.label);
                     }
-                } catch (e) {
-                    console.error("Erro ao sincronizar " + item.label, e);
                 }
-            }
-            if ((await db.syncQueue.count()) === 0) {
-                // Optional: alert('Dados sincronizados com sucesso!');
+            } catch (e) {
+                console.error("Erro no Sync:", e);
             }
         }
 

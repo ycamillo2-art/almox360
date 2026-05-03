@@ -1,4 +1,4 @@
-const CACHE_NAME = 'almox-v1.4.0';
+const CACHE_NAME = 'almox-v1.4.1';
 const ASSETS = [
   '/',
   '/cadastro/',
@@ -7,6 +7,7 @@ const ASSETS = [
   '/relatorios/',
   '/static/icon.png',
   '/static/manifest.json',
+  'https://unpkg.com/dexie@latest/dist/dexie.js',
   'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css',
@@ -19,9 +20,7 @@ const ASSETS = [
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
   );
 });
 
@@ -37,19 +36,13 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // We want to handle POST requests specially if offline, but SW can't "cache" POSTs easily.
-  // For GET requests (browsing), use Network First.
   if (event.request.method === 'GET') {
     event.respondWith(
       fetch(event.request).then(response => {
-        // Update cache with fresh version
         const resClone = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
         return response;
-      }).catch(() => {
-        // Fallback to cache if network fails
-        return caches.match(event.request);
-      })
+      }).catch(() => caches.match(event.request))
     );
   }
 });
