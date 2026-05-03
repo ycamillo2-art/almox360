@@ -36,7 +36,6 @@
         border-radius: 20px;
         padding: 5px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        overflow: hidden;
     }
     .table-almox { width: 100%; border-collapse: separate; border-spacing: 0; }
     .table-almox th {
@@ -53,84 +52,155 @@
         border-bottom: 1px solid #f5f5f5;
     }
     
-    /* Status Colors from Screenshot */
     .row-ok { background-color: #e8f5e9 !important; }
     .row-alerta { background-color: #fff9c4 !important; }
     
-    .table-almox tr:hover { opacity: 0.9; cursor: pointer; }
+    /* Mobile Cards Layout */
+    .product-card-mobile {
+        display: none;
+        background: white;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-left: 8px solid #2e7d32;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .product-card-mobile.alert-item { border-left-color: #fbc02d; background-color: #fffde7; }
+    
+    .card-row-data { display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+    .card-row-data:last-child { border-bottom: none; }
+    .card-label-small { font-size: 11px; color: #777; text-transform: uppercase; font-weight: bold; }
+    .card-value-small { font-size: 14px; color: #333; font-weight: 600; }
+
+    @media (max-width: 768px) {
+        .table-container { display: none; }
+        .product-card-mobile { display: block; }
+        .search-input { max-width: 100%; }
+    }
 </style>
 {% endblock %}
 
 {% block content %}
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 col-6">
         <div class="dash-card bg-cadastrados">
             <span class="card-val">{{ total_itens }}</span>
-            <span class="card-label">Itens cadastrados</span>
+            <span class="card-label">Itens</span>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 col-6">
         <div class="dash-card bg-alerta">
             <span class="card-val">{{ itens_alerta }}</span>
-            <span class="card-label">Itens em alerta</span>
+            <span class="card-label">Alerta</span>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 col-6">
         <div class="dash-card bg-em-uso">
             <span class="card-val">{{ ferramentas_em_uso }}</span>
-            <span class="card-label">Ferramentas em uso</span>
+            <span class="card-label">Em Uso</span>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 col-6">
         <div class="dash-card bg-movimentacoes">
             <span class="card-val">—</span>
-            <span class="card-label">Movimentações hoje</span>
+            <span class="card-label">Hoje</span>
         </div>
     </div>
 </div>
 
 <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar produto">
+    <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar produto...">
 </div>
 
-    <div class="table-container shadow-sm">
-        <div style="overflow-x: auto;">
-            <table class="table-almox" id="productTable">
-                <thead>
-                    <tr>
-                        <th>Cód</th>
-                        <th>Nome</th>
-                        <th>Cat</th>
-                        <th>Saldo</th>
-                        <th>Loc</th>
-                        <th>Mín</th>
-                        <th>Uso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for p in produtos %}
-                    <tr class="{% if p.saldo <= p.minimo %}row-alerta{% else %}row-ok{% endif %}">
-                        <td>{{ p.codigo }}</td>
-                        <td class="font-weight-bold">{{ p.nome }}</td>
-                        <td>{{ p.categoria|truncatechars:5 }}</td>
-                        <td class="text-center">{{ p.saldo|floatformat:1 }}</td>
-                        <td>{{ p.local }}</td>
-                        <td class="text-center">{{ p.minimo|floatformat:1 }}</td>
-                        <td class="text-center">{{ p.em_uso|floatformat:1 }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+<!-- MOBILE VERSION (CARDS) -->
+<div id="mobileProducts">
+    {% for p in produtos %}
+    <div class="product-card-mobile mobile-item {% if p.saldo <= p.minimo %}alert-item{% endif %}">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+            <h6 class="font-weight-bold m-0" style="color: #2e7d32;">{{ p.nome|upper }}</h6>
+            <span class="badge badge-light border">{{ p.codigo }}</span>
+        </div>
+        
+        <div class="card-row-data">
+            <div>
+                <div class="card-label-small">Saldo / Mínimo</div>
+                <div class="card-value-small {% if p.saldo <= p.minimo %}text-danger{% endif %}">
+                    {{ p.saldo|floatformat:1 }} / {{ p.minimo|floatformat:1 }}
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="card-label-small">Em Uso</div>
+                <div class="card-value-small">{{ p.em_uso|floatformat:1 }}</div>
+            </div>
+        </div>
+
+        <div class="card-row-data">
+            <div>
+                <div class="card-label-small">Localização</div>
+                <div class="card-value-small">{{ p.local }}</div>
+            </div>
+            <div class="text-right">
+                <div class="card-label-small">Categoria</div>
+                <div class="card-value-small">{{ p.categoria }}</div>
+            </div>
+        </div>
+
+        <div class="mt-2">
+            <div class="card-label-small">Observação</div>
+            <div class="card-value-small" style="font-style: italic; font-weight: normal;">{{ p.observacao|default:"-" }}</div>
         </div>
     </div>
+    {% endfor %}
+</div>
 
+<!-- DESKTOP VERSION (TABLE) -->
+<div class="table-container shadow-sm">
+    <div style="overflow-x: auto;">
+        <table class="table-almox" id="productTable">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Saldo</th>
+                    <th>Local</th>
+                    <th>Mínimo</th>
+                    <th>Uso</th>
+                    <th>Obs</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in produtos %}
+                <tr class="{% if p.saldo <= p.minimo %}row-alerta{% else %}row-ok{% endif %}">
+                    <td>{{ p.codigo }}</td>
+                    <td class="font-weight-bold">{{ p.nome }}</td>
+                    <td>{{ p.categoria }}</td>
+                    <td class="text-center">{{ p.saldo|floatformat:1 }}</td>
+                    <td>{{ p.local }}</td>
+                    <td class="text-center">{{ p.minimo|floatformat:1 }}</td>
+                    <td class="text-center">{{ p.em_uso|floatformat:1 }}</td>
+                    <td>{{ p.observacao|default:"-" }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <script>
     document.getElementById('searchInput').addEventListener('keyup', function() {
         let value = this.value.toLowerCase();
+        
+        // Filter Table (Desktop)
         let rows = document.querySelectorAll('#productTable tbody tr');
         rows.forEach(row => {
             row.style.display = row.innerText.toLowerCase().includes(value) ? '' : 'none';
+        });
+
+        // Filter Cards (Mobile)
+        let cards = document.querySelectorAll('.mobile-item');
+        cards.forEach(card => {
+            card.style.display = card.innerText.toLowerCase().includes(value) ? '' : 'none';
         });
     });
 </script>
