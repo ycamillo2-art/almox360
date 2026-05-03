@@ -67,13 +67,42 @@ def movimentacao(request):
             produto.saldo -= qtd
             if 'FERRAMENT' in produto.categoria.upper(): produto.em_uso += qtd
             produto.save()
-            Historico.objects.create(produto_info=f"{produto.codigo} - {produto.nome}", tipo=produto.categoria, quantidade=qtd, responsavel=responsavel, saldo_anterior=saldo_anterior, saldo_atual=produto.saldo, local=produto.local)
+            Historico.objects.create(
+                produto=produto,
+                produto_info=f"{produto.codigo} - {produto.nome}", 
+                tipo=produto.categoria, 
+                quantidade=qtd, 
+                responsavel=responsavel, 
+                saldo_anterior=saldo_anterior, 
+                saldo_atual=produto.saldo, 
+                local=produto.local
+            )
         messages.success(request, "Saída realizada!"); return redirect('index')
     return render(request, 'almox/movimentacao.html', {'produtos': Produto.objects.all()})
 
 @login_required
 def relatorios(request):
-    return render(request, 'almox/relatorios.html', {'registros': Historico.objects.all()})
+    if request.method == 'POST' and 'devolver_id' in request.POST:
+        h_id = request.POST.get('devolver_id')
+        try:
+            h = Historico.objects.get(id=h_id)
+            if h.produto and h.devolvido == 'NÃO':
+                p = h.produto
+                p.saldo += h.quantidade
+                if 'FERRAMENT' in p.categoria.upper():
+                    p.em_uso = max(0, p.em_uso - h.quantidade)
+                p.save()
+                
+                h.devolvido = 'SIM'
+                h.save()
+                messages.success(request, f"Ferramenta '{p.nome}' devolvida ao estoque!")
+            else:
+                messages.error(request, "Não foi possível processar a devolução.")
+        except Historico.DoesNotExist:
+            messages.error(request, "Registro não encontrado.")
+        return redirect('relatorios')
+
+    return render(request, 'almox/relatorios.html', {'registros': Historico.objects.all().order_by('-data')})
 
 @login_required
 def veiculos(request):

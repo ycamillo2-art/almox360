@@ -16,6 +16,7 @@ class Produto(models.Model):
 
 class Historico(models.Model):
     data = models.DateTimeField(auto_now_add=True)
+    produto = models.ForeignKey(Produto, on_delete=models.SET_NULL, null=True, blank=True)
     produto_info = models.CharField(max_length=255)
     tipo = models.CharField(max_length=50)
     quantidade = models.DecimalField(max_digits=12, decimal_places=2)

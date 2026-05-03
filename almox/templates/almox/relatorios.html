@@ -19,6 +19,7 @@
                     <th>Responsável</th>
                     <th>Local</th>
                     <th>Saldo Atual</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,23 @@
                     <td>{{ r.responsavel }}</td>
                     <td>{{ r.local }}</td>
                     <td>{{ r.saldo_atual }}</td>
+                    <td>
+                        {% if "FERRAMENT" in r.tipo|upper %}
+                            {% if r.devolvido == "NÃO" %}
+                                <form method="post" style="display: inline;" class="no-confirm">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="devolver_id" value="{{ r.id }}">
+                                    <button type="submit" class="btn btn-sm btn-info py-0 px-2" style="font-size: 11px;">
+                                        DEVOLVER
+                                    </button>
+                                </form>
+                            {% else %}
+                                <span class="badge badge-success">DEVOLVIDO</span>
+                            {% endif %}
+                        {% else %}
+                            <small class="text-muted">Consumível</small>
+                        {% endif %}
+                    </td>
                 </tr>
                 {% empty %}
                 <tr><td colspan="7" class="text-center text-muted py-4">Nenhum registro encontrado.</td></tr>
