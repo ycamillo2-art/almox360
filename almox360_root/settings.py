@@ -134,6 +134,12 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_COOKIE_AGE = 2592000 # 30 dias em segundos
 SESSION_SAVE_EVERY_REQUEST = True
 
+# Segurança CSRF para Render/HTTPS
+CSRF_TRUSTED_ORIGINS = ['https://almox360.onrender.com']
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = False  # Permitir que o JS leia o cookie CSRF para o Sync Offline
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/

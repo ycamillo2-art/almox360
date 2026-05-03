@@ -270,8 +270,9 @@
         {% block content %}{% endblock %}
 
         <div class="text-center mt-5 mb-3" style="font-size: 10px; color: #ccc;">
-            ALMOX360 v1.4.2 | RD CONILON
+            ALMOX360 v1.4.3 | RD CONILON
         </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -297,18 +298,36 @@
             window.location.reload();
         }
 
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
         async function processSyncQueue() {
             if (!navigator.onLine) return;
             try {
                 const items = await db.syncQueue.toArray();
                 if (items.length === 0) return;
 
+                const currentCsrf = getCookie('csrftoken');
+
                 console.log("Sincronizando dados pendentes...");
                 for (const item of items) {
                     const params = new URLSearchParams();
-                    // Garante que arrays (múltiplos produtos) sejam tratados corretamente
                     for (const key in item.data) {
-                        if (Array.isArray(item.data[key])) {
+                        if (key === 'csrfmiddlewaretoken' && currentCsrf) {
+                            params.append(key, currentCsrf);
+                        } else if (Array.isArray(item.data[key])) {
                             item.data[key].forEach(val => params.append(key, val));
                         } else {
                             params.append(key, item.data[key]);
@@ -319,7 +338,7 @@
                         method: 'POST',
                         body: params,
                         headers: {
-                            'X-CSRFToken': item.data.csrfmiddlewaretoken,
+                            'X-CSRFToken': currentCsrf || item.data.csrfmiddlewaretoken,
                             'Content-Type': 'application/x-www-form-urlencoded'
                         }
                     });
