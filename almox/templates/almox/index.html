@@ -4,24 +4,26 @@
 <style>
     .dash-card {
         border-radius: 15px;
-        padding: 25px;
+        padding: 20px;
         color: white;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 120px;
+        height: 100px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        margin-bottom: 25px;
+        margin-bottom: 20px;
+        text-align: center;
     }
-    .card-val { font-size: 32px; font-weight: 700; margin-right: 15px; }
-    .card-label { font-size: 14px; font-weight: 500; opacity: 0.9; line-height: 1.2; }
+    .card-val { font-size: 28px; font-weight: 700; line-height: 1; }
+    .card-label { font-size: 12px; font-weight: 500; opacity: 0.9; margin-top: 5px; }
     
     .bg-cadastrados { background-color: #2e7d32; }
     .bg-alerta { background-color: #fbc02d; color: #333 !important; }
     .bg-em-uso { background-color: #2979ff; }
     .bg-movimentacoes { background-color: #757575; }
 
-    .search-container { margin-bottom: 25px; }
+    .search-container { margin-bottom: 20px; }
     .search-input {
         border-radius: 12px;
         padding: 12px 20px;
@@ -29,24 +31,26 @@
         width: 100%;
         max-width: 400px;
         background-color: white;
+        font-size: 16px;
     }
 
     .table-container {
         background: white;
         border-radius: 20px;
-        padding: 5px;
+        padding: 10px;
         box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        display: block;
     }
     .table-almox { width: 100%; border-collapse: separate; border-spacing: 0; }
     .table-almox th {
-        padding: 15px 20px;
+        padding: 15px;
         font-weight: 600;
         color: #555;
         border-bottom: 2px solid #f0f0f0;
         text-align: left;
     }
     .table-almox td {
-        padding: 15px 20px;
+        padding: 15px;
         font-size: 14px;
         color: #444;
         border-bottom: 1px solid #f5f5f5;
@@ -76,6 +80,8 @@
         .table-container { display: none; }
         .product-card-mobile { display: block; }
         .search-input { max-width: 100%; }
+        .dash-card { padding: 10px; height: 80px; }
+        .card-val { font-size: 22px; }
     }
 </style>
 {% endblock %}
