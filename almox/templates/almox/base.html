@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ALMOX360{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-brown: #5d4037;
+            --secondary-green: #2e7d32;
+            --bg-light: #f8f9fa;
+            --card-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            --border-color: #e9ecef;
+        }
+        body { 
+            background-color: var(--bg-light); 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+        }
+        .navbar-custom {
+            background-color: white;
+            box-shadow: var(--card-shadow);
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+        .brand-logo {
+            font-weight: 900;
+            color: var(--primary-brown);
+            letter-spacing: 2px;
+            text-decoration: none !important;
+        }
+        .brand-logo span { color: var(--secondary-green); }
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        .nav-link-custom {
+            color: var(--primary-brown) !important;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .nav-link-custom:hover { color: var(--secondary-green) !important; }
+        .btn-custom {
+            border-radius: 12px;
+            padding: 12px 25px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        .btn-primary-custom {
+            background: var(--primary-brown);
+            color: white;
+            border: none;
+        }
+        .btn-success-custom {
+            background: var(--secondary-green);
+            color: white;
+            border: none;
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container">
+            <a class="navbar-brand brand-logo" href="{% url 'index' %}">ALMOX<span>360</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="{% url 'index' %}"><i class="fas fa-home"></i> Início</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="{% url 'cadastro' %}"><i class="fas fa-plus"></i> Cadastro</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="{% url 'movimentacao' %}"><i class="fas fa-exchange-alt"></i> Saída</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="{% url 'relatorios' %}"><i class="fas fa-file-alt"></i> Relatórios</a></li>
+                    <li class="nav-item">
+                        <form action="{% url 'logout' %}" method="post" class="inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-link nav-link nav-link-custom"><i class="fas fa-sign-out-alt"></i> Sair</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endif %}
+
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/static/sw.js');
+            });
+        }
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "Almox 360 Pro",
+  "short_name": "Almox360",
+  "description": "Sistema Profissional de Gestão de Almoxarifado",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2897/2897785.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

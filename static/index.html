@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almox 360 Pro</title>
+    <link rel="manifest" href="/manifest.json">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/lucide-static@0.321.0/font/lucide.min.css" rel="stylesheet">
+    <style>
+        .page { display: none; }
+        .page.active { display: block; }
+        body { background-color: #f3f4f6; }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- 🚩 NOTIFICAÇÃO OFFLINE -->
+    <div id="offline-banner" class="hidden bg-yellow-500 text-white text-center py-1 text-sm font-medium">
+        Você está offline. As movimentações serão salvas localmente e sincronizadas depois.
+    </div>
+
+    <!-- 🔑 TELA DE LOGIN -->
+    <div id="page-login" class="page active min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+            <h1 class="text-3xl font-bold text-blue-600 mb-6 text-center">Almox 360</h1>
+            <div id="login-error" class="hidden bg-red-100 text-red-700 p-3 rounded-lg mb-4 text-sm"></div>
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Usuário</label>
+                    <input type="text" id="login-user" class="w-full p-3 border rounded-xl mt-1 focus:ring-2 focus:ring-blue-500 outline-none" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Senha</label>
+                    <input type="password" id="login-pass" class="w-full p-3 border rounded-xl mt-1 focus:ring-2 focus:ring-blue-500 outline-none" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">Entrar</button>
+            </form>
+            <p class="mt-4 text-center text-xs text-gray-500">Versão Profissional v2.0</p>
+        </div>
+    </div>
+
+    <!-- 📱 APP CONTAINER -->
+    <div id="app-container" class="hidden min-h-screen flex flex-col">
+        <!-- HEADER -->
+        <header class="bg-blue-600 text-white p-4 shadow-lg flex justify-between items-center sticky top-0 z-50">
+            <h2 class="text-xl font-bold">Almox 360</h2>
+            <div class="flex items-center gap-4">
+                <span id="sync-status" class="text-xs bg-blue-500 px-2 py-1 rounded-full">Sincronizado</span>
+                <button id="btn-logout" class="text-white hover:text-blue-200"><i class="lc-log-out"></i></button>
+            </div>
+        </header>
+
+        <!-- DASHBOARD PAGE -->
+        <main id="page-dashboard" class="page p-4 space-y-4 flex-1">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-2xl shadow border-l-4 border-blue-500">
+                    <p class="text-gray-500 text-xs font-bold uppercase">Total Itens</p>
+                    <p id="stat-total" class="text-2xl font-black">0</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow border-l-4 border-red-500">
+                    <p class="text-gray-500 text-xs font-bold uppercase">Alertas</p>
+                    <p id="stat-alert" class="text-2xl font-black text-red-600">0</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow border-l-4 border-green-500">
+                    <p class="text-gray-500 text-xs font-bold uppercase">Em Uso</p>
+                    <p id="stat-use" class="text-2xl font-black">0</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow border-l-4 border-purple-500">
+                    <p class="text-gray-500 text-xs font-bold uppercase">Mov. Hoje</p>
+                    <p id="stat-today" class="text-2xl font-black">0</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow overflow-hidden">
+                <div class="p-4 border-b flex justify-between items-center">
+                    <h3 class="font-bold">Estoque</h3>
+                    <input type="text" id="search-inventory" placeholder="Buscar..." class="text-sm p-1 border rounded">
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-gray-50 text-gray-600">
+                            <tr>
+                                <th class="p-3">Item</th>
+                                <th class="p-3">Saldo</th>
+                                <th class="p-3">Local</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-table-body">
+                            <!-- JS Inject -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- SAÍDA PAGE -->
+        <main id="page-movement" class="page p-4 space-y-4 flex-1">
+            <div class="bg-white p-6 rounded-2xl shadow-lg">
+                <h3 class="text-lg font-bold mb-4">Registrar Saída/Entrada</h3>
+                <form id="movement-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium">Produto</label>
+                        <select id="mov-product" class="w-full p-3 border rounded-xl" required>
+                            <option value="">Selecione...</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium">Tipo</label>
+                            <select id="mov-type" class="w-full p-3 border rounded-xl">
+                                <option value="SAIDA">Saída</option>
+                                <option value="ENTRADA">Entrada</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium">Quantidade</label>
+                            <input type="number" id="mov-qty" step="0.01" class="w-full p-3 border rounded-xl" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium">Responsável</label>
+                        <input type="text" id="mov-resp" class="w-full p-3 border rounded-xl" placeholder="Nome do funcionário" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition">Confirmar Registro</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- FOOTER NAV -->
+        <nav class="bg-white border-t flex justify-around p-2 sticky bottom-0">
+            <button onclick="showPage('dashboard')" class="flex flex-col items-center p-2 text-blue-600">
+                <i class="lucide-layout-dashboard"></i>
+                <span class="text-[10px] font-bold">Home</span>
+            </button>
+            <button onclick="showPage('movement')" class="flex flex-col items-center p-2 text-gray-400 hover:text-blue-600">
+                <i class="lucide-arrow-right-left"></i>
+                <span class="text-[10px] font-bold">Movimento</span>
+            </button>
+            <button onclick="showPage('reports')" class="flex flex-col items-center p-2 text-gray-400 hover:text-blue-600">
+                <i class="lucide-file-text"></i>
+                <span class="text-[10px] font-bold">Relatórios</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>

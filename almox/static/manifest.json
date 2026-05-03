@@ -1,0 +1,15 @@
+{
+    "name": "ALMOX360",
+    "short_name": "ALMOX360",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f8f9fa",
+    "theme_color": "#2e7d32",
+    "icons": [
+        {
+            "src": "https://cdn-icons-png.flaticon.com/512/3067/3067451.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

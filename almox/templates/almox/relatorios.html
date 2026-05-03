@@ -1,0 +1,38 @@
+{% extends 'almox/base.html' %}
+
+{% block content %}
+<div class="main-card">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="font-weight-bold"><i class="fas fa-history"></i> Histórico de Movimentações</h4>
+        <button onclick="window.print()" class="btn btn-outline-dark"><i class="fas fa-print"></i> Imprimir</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-sm table-striped">
+            <thead>
+                <tr>
+                    <th>Data/Hora</th>
+                    <th>Produto</th>
+                    <th>Tipo</th>
+                    <th>Qtd</th>
+                    <th>Responsável</th>
+                    <th>Local</th>
+                    <th>Saldo Atual</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in registros %}
+                <tr>
+                    <td style="font-size: 0.85rem;">{{ r.data|date:"d/m/Y H:i" }}</td>
+                    <td class="font-weight-bold">{{ r.produto_info }}</td>
+                    <td>{{ r.tipo }}</td>
+                    <td class="text-danger font-weight-bold">-{{ r.quantidade }}</td>
+                    <td>{{ r.responsavel }}</td>
+                    <td>{{ r.local }}</td>
+                    <td>{{ r.saldo_atual }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

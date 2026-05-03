@@ -1,0 +1,50 @@
+{% extends 'almox/base.html' %}
+
+{% block content %}
+<div class="main-card">
+    <h4 class="font-weight-bold mb-4"><i class="fas fa-plus-circle text-success"></i> Novo Lançamento de Estoque</h4>
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>Nome do Produto</label>
+                <input type="text" name="nome" class="form-control form-control-lg" required placeholder="Ex: Pá de Bico">
+            </div>
+            <div class="col-md-3 form-group">
+                <label>Categoria</label>
+                <select name="categoria" class="form-control form-control-lg">
+                    <option value="DIVERSOS">DIVERSOS</option>
+                    <option value="FERRAMENTAS">FERRAMENTAS</option>
+                    <option value="DEFENSIVOS">DEFENSIVOS</option>
+                    <option value="ADUBO">ADUBO</option>
+                </select>
+            </div>
+            <div class="col-md-3 form-group">
+                <label>Localização</label>
+                <select name="local" class="form-control form-control-lg">
+                    <option value="ALMOX 1">ALMOX 1</option>
+                    <option value="ALMOX 2">ALMOX 2</option>
+                    <option value="ALMOX 3">ALMOX 3</option>
+                    <option value="ALMOX 4">ALMOX 4</option>
+                    <option value="ALMOX 5">ALMOX 5</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 form-group">
+                <label>Saldo Inicial</label>
+                <input type="text" name="saldo" class="form-control form-control-lg" required value="0">
+            </div>
+            <div class="col-md-3 form-group">
+                <label>Estoque Mínimo</label>
+                <input type="text" name="minimo" class="form-control form-control-lg" required value="0">
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Observação (Opcional)</label>
+                <input type="text" name="observacao" class="form-control form-control-lg">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary-custom btn-custom w-100 mt-3">SALVAR NO SISTEMA</button>
+    </form>
+</div>
+{% endblock %}

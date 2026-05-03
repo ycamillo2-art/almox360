@@ -1,0 +1,62 @@
+{% extends 'almox/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="main-card text-center">
+            <h5 class="text-muted">TOTAL DE ITENS</h5>
+            <h2 class="font-weight-bold" style="color: var(--primary-brown);">{{ total_itens }}</h2>
+            <i class="fas fa-box mt-2" style="font-size: 2rem; color: #d7ccc8;"></i>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="main-card text-center" style="border-left: 5px solid #ef5350;">
+            <h5 class="text-muted">ESTOQUE CRÍTICO</h5>
+            <h2 class="font-weight-bold" style="color: #ef5350;">{{ itens_alerta }}</h2>
+            <i class="fas fa-exclamation-triangle mt-2" style="font-size: 2rem; opacity: 0.3;"></i>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="main-card text-center" style="border-left: 5px solid var(--secondary-green);">
+            <h5 class="text-muted">FERRAMENTAS EM USO</h5>
+            <h2 class="font-weight-bold" style="color: var(--secondary-green);">{{ ferramentas_em_uso }}</h2>
+            <i class="fas fa-tools mt-2" style="font-size: 2rem; opacity: 0.3;"></i>
+        </div>
+    </div>
+</div>
+
+<div class="main-card">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="font-weight-bold">Últimos Lançamentos</h4>
+        <a href="{% url 'cadastro' %}" class="btn btn-success-custom btn-custom">ADICIONAR PRODUTO</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Saldo</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in produtos %}
+                <tr>
+                    <td><code>{{ p.codigo }}</code></td>
+                    <td>{{ p.nome }}</td>
+                    <td>{{ p.saldo }}</td>
+                    <td>
+                        {% if p.saldo <= p.minimo %}
+                            <span class="badge badge-danger p-2">CRÍTICO</span>
+                        {% else %}
+                            <span class="badge badge-success p-2">OK</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
