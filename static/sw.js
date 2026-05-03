@@ -1,6 +1,7 @@
-const CACHE_NAME = 'almox-v1.4.1';
+const CACHE_NAME = 'almox-v1.4.2';
 const ASSETS = [
   '/',
+  '/login/',
   '/cadastro/',
   '/movimentacao/',
   '/veiculos/',
@@ -36,13 +37,27 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  if (event.request.method === 'GET') {
-    event.respondWith(
-      fetch(event.request).then(response => {
+  // Solo capturamos GET
+  if (event.request.method !== 'GET') return;
+
+  event.respondWith(
+    fetch(event.request).then(response => {
+      // Se a resposta for OK, guardamos no cache e retornamos
+      if (response.ok) {
         const resClone = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
-        return response;
-      }).catch(() => caches.match(event.request))
-    );
-  }
+      }
+      return response;
+    }).catch(() => {
+      // Se falhar a rede (offline), buscamos no cache
+      return caches.match(event.request).then(cachedResponse => {
+        if (cachedResponse) return cachedResponse;
+        
+        // Se nem no cache tem, retornamos a página inicial (se for navegação)
+        if (event.request.mode === 'navigate') {
+          return caches.match('/');
+        }
+      });
+    })
+  );
 });

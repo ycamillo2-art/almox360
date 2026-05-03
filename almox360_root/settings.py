@@ -129,9 +129,9 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-# Segurança de Sessão
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_AGE = 3600
+# Segurança de Sessão - Atualizado para Modo Offline (30 dias)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_AGE = 2592000 # 30 dias em segundos
 SESSION_SAVE_EVERY_REQUEST = True
 
 
