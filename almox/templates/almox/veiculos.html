@@ -47,29 +47,30 @@
         <div class="status-card bg-alerta">
             <h1 class="font-weight-bold m-0">{{ count_alerta }}</h1>
             <div class="font-weight-bold">Alerta</div>
-            <small>Nenhum</small>
         </div>
     </div>
     <div class="col-md-4">
         <div class="status-card bg-atrasado">
             <h1 class="font-weight-bold m-0">{{ count_atrasado }}</h1>
             <div class="font-weight-bold">Atrasado</div>
-            {% for r in registros %}
-                {% if r.status == "ATRASADO" %}
-                    <small style="display: block;">{{ r.veiculo|upper }}</small>
-                {% endif %}
-            {% endfor %}
+            <div class="mt-2" style="font-size: 0.75rem; opacity: 0.9;">
+                {% for r in registros %}
+                    {% if r.status == "ATRASADO" %}
+                        <div class="font-weight-bold">{{ r.veiculo|upper }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
 
 <div class="content-card">
-    <form method="post" class="mb-5">
+    <form method="post" class="mb-5 no-confirm">
         {% csrf_token %}
         <div class="row">
             <div class="col-md-6">
                 <label class="font-weight-bold">Veículo</label>
-                <input type="text" name="veiculo" class="custom-input" required>
+                <input type="text" name="veiculo" class="custom-input" required placeholder="Ex: Kombi Branca">
             </div>
             <div class="col-md-6">
                 <label class="font-weight-bold">Última Manutenção</label>
@@ -81,11 +82,11 @@
             </div>
             <div class="col-md-6">
                 <label class="font-weight-bold">Tipo</label>
-                <input type="text" name="tipo" class="custom-input" required>
+                <input type="text" name="tipo" class="custom-input" required placeholder="Ex: Óleo e Filtro">
             </div>
             <div class="col-md-12">
                 <label class="font-weight-bold">Responsável</label>
-                <input type="text" name="responsavel" class="custom-input" required>
+                <input type="text" name="responsavel" class="custom-input" required placeholder="Nome do motorista/mecânico">
             </div>
         </div>
         <div class="mt-3">
@@ -97,10 +98,47 @@
 
     <div class="table-responsive">
         <table class="table table-hover">
-...
+            <thead>
+                <tr class="text-muted">
+                    <th>Veículo</th>
+                    <th>Próxima</th>
+                    <th>Status</th>
+                    <th>Tipo</th>
+                    <th>Responsável</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in registros %}
+                <tr>
+                    <td class="font-weight-bold">{{ r.veiculo|upper }}</td>
+                    <td>{{ r.proxima_manutencao|date:"d/m/Y" }}</td>
+                    <td>
+                        <span class="status-label status-{{ r.status|lower }}">{{ r.status }}</span>
+                    </td>
+                    <td>{{ r.tipo }}</td>
+                    <td>{{ r.responsavel }}</td>
+                    <td>
+                        <form method="post" style="display: inline;" class="no-confirm">
+                            {% csrf_token %}
+                            <input type="hidden" name="confirmar_id" value="{{ r.id }}">
+                            <button type="submit" class="btn btn-sm btn-success" title="Confirmar Manutenção Realizada">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="6" class="text-center text-muted">Nenhum veículo pendente de manutenção.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <script>
     document.querySelector('form').addEventListener('submit', function(e) {
-        if(!this.querySelector('input[name="confirmar_id"]')) { // Don't block the tiny check button
+        if(!this.querySelector('input[name="confirmar_id"]')) {
             const btn = document.getElementById('btn-salvar-v');
             btn.disabled = true;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> SALVANDO...';
@@ -108,4 +146,3 @@
     });
 </script>
 {% endblock %}
-
