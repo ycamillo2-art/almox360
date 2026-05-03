@@ -1,4 +1,4 @@
-const CACHE_NAME = 'almox-v1.4.2';
+const CACHE_NAME = 'almox-v1.4.4';
 const ASSETS = [
   '/',
   '/login/',
@@ -18,6 +18,7 @@ const ASSETS = [
   'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'
 ];
 
+// Instalação: Cacheia os arquivos essenciais
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
@@ -25,6 +26,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
+// Ativação: Limpa caches antigos
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -36,28 +38,28 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Interceptação de Requisições
 self.addEventListener('fetch', (event) => {
-  // Solo capturamos GET
+  // Apenas lidamos com GET
   if (event.request.method !== 'GET') return;
 
   event.respondWith(
-    fetch(event.request).then(response => {
-      // Se a resposta for OK, guardamos no cache e retornamos
-      if (response.ok) {
-        const resClone = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
-      }
-      return response;
-    }).catch(() => {
-      // Se falhar a rede (offline), buscamos no cache
-      return caches.match(event.request).then(cachedResponse => {
-        if (cachedResponse) return cachedResponse;
-        
-        // Se nem no cache tem, retornamos a página inicial (se for navegação)
+    caches.match(event.request).then((cachedResponse) => {
+      // Se estiver no cache, retorna o cache e tenta atualizar em background (Stale-While-Revalidate)
+      const fetchPromise = fetch(event.request).then((networkResponse) => {
+        if (networkResponse.ok) {
+          const resClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
+        }
+        return networkResponse;
+      }).catch(() => {
+        // Se falhar a rede e não tiver no cache, tenta retornar a página inicial como fallback para navegação
         if (event.request.mode === 'navigate') {
           return caches.match('/');
         }
       });
+
+      return cachedResponse || fetchPromise;
     })
   );
 });
