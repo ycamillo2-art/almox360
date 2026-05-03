@@ -78,17 +78,24 @@ def relatorios(request):
 @login_required
 def veiculos(request):
     if request.method == 'POST':
-        ControleVeiculo.objects.create(
-            veiculo=request.POST.get('veiculo'),
-            ultima_manutencao=request.POST.get('ultima_manutencao'),
-            proxima_manutencao=request.POST.get('proxima_manutencao'),
-            tipo=request.POST.get('tipo'),
-            responsavel=request.POST.get('responsavel')
-        )
-        messages.success(request, "Registro de veículo salvo!")
+        if 'confirmar_id' in request.POST:
+            c_id = request.POST.get('confirmar_id')
+            registro = ControleVeiculo.objects.get(id=c_id)
+            registro.concluido = True
+            registro.save()
+            messages.success(request, f"Manutenção de {registro.veiculo} confirmada e removida da lista!")
+        else:
+            ControleVeiculo.objects.create(
+                veiculo=request.POST.get('veiculo'),
+                ultima_manutencao=request.POST.get('ultima_manutencao'),
+                proxima_manutencao=request.POST.get('proxima_manutencao'),
+                tipo=request.POST.get('tipo'),
+                responsavel=request.POST.get('responsavel')
+            )
+            messages.success(request, "Registro de veículo salvo!")
         return redirect('veiculos')
     
-    registros = ControleVeiculo.objects.all()
+    registros = ControleVeiculo.objects.filter(concluido=False)
     context = {
         'registros': registros,
         'count_ok': sum(1 for r in registros if r.status == "OK"),

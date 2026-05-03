@@ -32,6 +32,7 @@ class ControleVeiculo(models.Model):
     proxima_manutencao = models.DateField()
     tipo = models.CharField(max_length=200)
     responsavel = models.CharField(max_length=100)
+    concluido = models.BooleanField(default=False)
     
     @property
     def status(self):

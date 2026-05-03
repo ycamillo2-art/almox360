@@ -98,29 +98,40 @@
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
-                <tr class="text-muted">
-                    <th>Veículo</th>
-                    <th>Última</th>
-                    <th>Próxima</th>
-                    <th>Status</th>
-                    <th>Tipo</th>
-                    <th>Usuário</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for r in registros %}
-                <tr style="{% if r.status == 'ATRASADO' %}background-color: #ffebee;{% endif %}">
-                    <td class="font-weight-bold">{{ r.veiculo|upper }}</td>
-                    <td>{{ r.ultima_manutencao|date:"Y-m-d" }}</td>
-                    <td>{{ r.proxima_manutencao|date:"Y-m-d" }}</td>
-                    <td>
-                        <span class="status-label status-{{ r.status|lower }}">{{ r.status }}</span>
-                    </td>
-                    <td>{{ r.tipo }}</td>
-                    <td>{{ r.responsavel }}</td>
-                </tr>
-                {% empty %}
-                <tr><td colspan="6" class="text-center text-muted">Nenhum registro encontrado.</td></tr>
+                    <tr class="text-muted">
+                        <th>Veículo</th>
+                        <th>Última</th>
+                        <th>Próxima</th>
+                        <th>Status</th>
+                        <th>Tipo</th>
+                        <th>Usuário</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in registros %}
+                    <tr style="{% if r.status == 'ATRASADO' %}background-color: #ffebee;{% endif %}">
+                        <td class="font-weight-bold">{{ r.veiculo|upper }}</td>
+                        <td>{{ r.ultima_manutencao|date:"Y-m-d" }}</td>
+                        <td>{{ r.proxima_manutencao|date:"Y-m-d" }}</td>
+                        <td>
+                            <span class="status-label status-{{ r.status|lower }}">{{ r.status }}</span>
+                        </td>
+                        <td>{{ r.tipo }}</td>
+                        <td>{{ r.responsavel }}</td>
+                        <td>
+                            <form method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="confirmar_id" value="{{ r.id }}">
+                                <button type="submit" class="btn btn-sm btn-success" title="Confirmar Manutenção">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="7" class="text-center text-muted">Nenhum registro encontrado.</td></tr>
+
                 {% endfor %}
             </tbody>
         </table>
