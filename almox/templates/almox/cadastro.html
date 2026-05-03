@@ -7,55 +7,94 @@
 
 <div class="content-card p-5">
     <h5 class="font-weight-bold mb-5"><i class="fas fa-plus-circle text-success"></i> Novo Lançamento de Estoque</h5>
-    <form method="post">
+    <form method="post" id="form-cadastro">
         {% csrf_token %}
         <div class="row mb-3">
             <div class="col-md-6 form-group">
                 <label class="font-weight-bold">Nome do Produto</label>
-                <input type="text" name="nome" class="form-control form-control-custom" required placeholder="Ex: Pá de Bico">
+                <input type="text" name="nome" class="form-control form-control-custom" required placeholder="Ex: Pá de Bico" value="{{ dados_post.nome }}">
             </div>
             <div class="col-md-3 form-group">
                 <label class="font-weight-bold">Categoria</label>
                 <select name="categoria" class="form-control form-control-custom">
-                    <option value="DIVERSOS">DIVERSOS</option>
-                    <option value="FERRAMENTAS">FERRAMENTAS</option>
-                    <option value="DEFENSIVOS">DEFENSIVOS</option>
-                    <option value="ADUBO">ADUBO</option>
+                    <option value="DIVERSOS" {% if dados_post.categoria == 'DIVERSOS' %}selected{% endif %}>DIVERSOS</option>
+                    <option value="FERRAMENTAS" {% if dados_post.categoria == 'FERRAMENTAS' %}selected{% endif %}>FERRAMENTAS</option>
+                    <option value="DEFENSIVOS" {% if dados_post.categoria == 'DEFENSIVOS' %}selected{% endif %}>DEFENSIVOS</option>
+                    <option value="ADUBO" {% if dados_post.categoria == 'ADUBO' %}selected{% endif %}>ADUBO</option>
                 </select>
             </div>
             <div class="col-md-3 form-group">
                 <label class="font-weight-bold">Localização</label>
                 <select name="local" class="form-control form-control-custom">
-                    <option value="ALMOX 1">ALMOX 1</option>
-                    <option value="ALMOX 2">ALMOX 2</option>
-                    <option value="ALMOX 3">ALMOX 3</option>
-                    <option value="ALMOX 4">ALMOX 4</option>
-                    <option value="ALMOX 5">ALMOX 5</option>
+                    <option value="ALMOX 1" {% if dados_post.local == 'ALMOX 1' %}selected{% endif %}>ALMOX 1</option>
+                    <option value="ALMOX 2" {% if dados_post.local == 'ALMOX 2' %}selected{% endif %}>ALMOX 2</option>
+                    <option value="ALMOX 3" {% if dados_post.local == 'ALMOX 3' %}selected{% endif %}>ALMOX 3</option>
+                    <option value="ALMOX 4" {% if dados_post.local == 'ALMOX 4' %}selected{% endif %}>ALMOX 4</option>
+                    <option value="ALMOX 5" {% if dados_post.local == 'ALMOX 5' %}selected{% endif %}>ALMOX 5</option>
                 </select>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 form-group">
                 <label class="font-weight-bold">Saldo Inicial</label>
-                <input type="text" name="saldo" class="form-control form-control-custom" required value="0">
+                <input type="text" name="saldo" class="form-control form-control-custom" required value="{{ dados_post.saldo|default:'0' }}">
             </div>
             <div class="col-md-3 form-group">
                 <label class="font-weight-bold">Estoque Mínimo</label>
-                <input type="text" name="minimo" class="form-control form-control-custom" required value="0">
+                <input type="text" name="minimo" class="form-control form-control-custom" required value="{{ dados_post.minimo|default:'0' }}">
             </div>
             <div class="col-md-6 form-group">
                 <label class="font-weight-bold">Observação (Opcional)</label>
-                <input type="text" name="observacao" class="form-control form-control-custom">
+                <input type="text" name="observacao" class="form-control form-control-custom" value="{{ dados_post.observacao }}">
             </div>
         </div>
         <button type="submit" class="btn btn-success btn-custom w-100 mt-4 shadow-sm" id="btn-salvar">SALVAR NO SISTEMA</button>
     </form>
 </div>
+
+<!-- Modal de Confirmação de Duplicado -->
+{% if produto_duplicado %}
+<div class="modal fade" id="modalDuplicado" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="border-radius: 20px; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+      <div class="modal-header bg-warning text-white" style="border-radius: 20px 20px 0 0; border: none;">
+        <h5 class="modal-title font-weight-bold"><i class="fas fa-exclamation-triangle mr-2"></i> Produto já existe!</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-4">
+        <p>O produto <strong>{{ produto_duplicado.nome }}</strong> já está cadastrado com o código <strong>{{ produto_duplicado.codigo }}</strong>.</p>
+        <p>Saldo atual no sistema: <strong>{{ produto_duplicado.saldo }}</strong></p>
+        <hr>
+        <p class="mb-0">Deseja <strong>somar</strong> a quantidade de <strong>{{ dados_post.saldo }}</strong> ao estoque atual?</p>
+      </div>
+      <div class="modal-footer border-0 p-4">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 10px;">Cancelar</button>
+        <form method="post" class="no-confirm">
+            {% csrf_token %}
+            <input type="hidden" name="nome" value="{{ dados_post.nome }}">
+            <input type="hidden" name="saldo" value="{{ dados_post.saldo }}">
+            <input type="hidden" name="confirmar_id" value="{{ produto_duplicado.id }}">
+            <button type="submit" class="btn btn-warning font-weight-bold" style="border-radius: 10px;">SIM, SOMAR AO ESTOQUE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 {% endblock %}
 
 {% block extra_js %}
 <script>
-    document.querySelector('form').addEventListener('submit', function() {
+    $(document).ready(function() {
+        {% if produto_duplicado %}
+            $('#modalDuplicado').modal('show');
+        {% endif %}
+    });
+
+    document.getElementById('form-cadastro').addEventListener('submit', function() {
         const btn = document.getElementById('btn-salvar');
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> SALVANDO...';

@@ -31,24 +31,61 @@ def cadastro(request):
         categoria = request.POST.get('categoria', 'DIVERSOS').upper().strip()
         saldo = Decimal(request.POST.get('saldo', '0').replace(',', '.'))
         minimo = Decimal(request.POST.get('minimo', '0').replace(',', '.'))
-        
+        observacao = request.POST.get('observacao', '')
+        local = request.POST.get('local', 'ALMOX 1')
+        confirmar_id = request.POST.get('confirmar_id')
+
+        # Se já confirmou que quer somar ao estoque
+        if confirmar_id:
+            try:
+                existente = Produto.objects.get(id=confirmar_id)
+                existente.saldo += saldo
+                existente.save()
+                messages.success(request, f"Estoque de '{existente.nome}' atualizado com sucesso!")
+                return redirect('cadastro')
+            except Produto.DoesNotExist:
+                messages.error(request, "Erro ao atualizar produto.")
+                return redirect('cadastro')
+
+        # Busca por duplicado (normalizado)
         existente = None
         for p in Produto.objects.all():
             if normalizar(p.nome) == normalizar(nome):
                 existente = p; break
         
         if existente:
-            existente.saldo += saldo; existente.save()
-            messages.success(request, f"Estoque atualizado: {existente.nome}")
-        else:
-            prefixos = {"FERRAMENTAS": "FER", "DIVERSOS": "DIV", "DEFENSIVOS": "DEF", "ADUBO": "ADU"}
-            prefixo = prefixos.get(categoria, categoria[:3])
-            ultimo = Produto.objects.filter(codigo__startswith=prefixo).order_by('-codigo').first()
-            num = (int(ultimo.codigo.split('-')[1]) + 1) if ultimo else 1
-            codigo = f"{prefixo}-{str(num).zfill(4)}"
-            Produto.objects.create(codigo=codigo, nome=nome, categoria=categoria, saldo=saldo, minimo=minimo)
-            messages.success(request, f"Produto cadastrado: {codigo}")
+            # Em vez de salvar, manda pro template perguntar
+            return render(request, 'almox/cadastro.html', {
+                'produto_duplicado': existente,
+                'dados_post': {
+                    'nome': nome,
+                    'categoria': categoria,
+                    'saldo': saldo,
+                    'minimo': minimo,
+                    'observacao': observacao,
+                    'local': local
+                }
+            })
+        
+        # Se não existe, cria novo
+        prefixos = {"FERRAMENTAS": "FER", "DIVERSOS": "DIV", "DEFENSIVOS": "DEF", "ADUBO": "ADU"}
+        prefixo = prefixos.get(categoria, categoria[:3])
+        ultimo = Produto.objects.filter(codigo__startswith=prefixo).order_by('-codigo').first()
+        num = (int(ultimo.codigo.split('-')[1]) + 1) if ultimo else 1
+        codigo = f"{prefixo}-{str(num).zfill(4)}"
+        
+        Produto.objects.create(
+            codigo=codigo, 
+            nome=nome, 
+            categoria=categoria, 
+            saldo=saldo, 
+            minimo=minimo,
+            local=local,
+            observacao=observacao
+        )
+        messages.success(request, f"Produto '{nome}' cadastrado com o código {codigo}!")
         return redirect('cadastro')
+        
     return render(request, 'almox/cadastro.html')
 
 @login_required
