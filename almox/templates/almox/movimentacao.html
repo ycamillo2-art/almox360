@@ -15,11 +15,11 @@
         </div>
 
         <div id="itens-container">
-            <div class="row item-linha mb-3 align-items-end">
+            <div class="row item-linha mb-4 align-items-end">
                 <div class="col-8 col-md-8">
-                    <label class="font-weight-bold">Produto</label>
-                    <select name="produto" class="form-control form-control-custom select-produto" required>
-                        <option value="">Selecione o produto...</option>
+                    <label class="font-weight-bold">Produto (Digite para buscar)</label>
+                    <select name="produto" class="form-control select-produto-search" required>
+                        <option value="">Buscar produto...</option>
                         {% for p in produtos %}
                             <option value="{{ p.id }}">{{ p.codigo }} - {{ p.nome }} (Estoque: {{ p.saldo }})</option>
                         {% endfor %}
@@ -46,21 +46,42 @@
 </div>
 
 <script>
+    function initSelect2(element) {
+        $(element).select2({
+            placeholder: "Buscar produto...",
+            allowClear: true,
+            width: '100%'
+        });
+    }
+
+    $(document).ready(function() {
+        initSelect2('.select-produto-search');
+    });
+
     document.getElementById('add-item').addEventListener('click', function() {
         const container = document.getElementById('itens-container');
+        
+        // Destroy select2 before cloning to avoid issues
+        $('.select-produto-search').select2('destroy');
+        
         const novaLinha = container.querySelector('.item-linha').cloneNode(true);
         novaLinha.querySelectorAll('input, select').forEach(el => el.value = '');
         novaLinha.querySelector('.btn-remove-item').style.display = 'block';
         container.appendChild(novaLinha);
+        
+        // Re-init all
+        initSelect2('.select-produto-search');
     });
 
     document.getElementById('itens-container').addEventListener('click', function(e) {
         if(e.target.closest('.btn-remove-item')) {
-            e.target.closest('.item-linha').remove();
+            const linha = e.target.closest('.item-linha');
+            $(linha).find('select').select2('destroy');
+            linha.remove();
         }
     });
 
-    document.getElementById('form-movimentacao').addEventListener('submit', function() {
+    document.getElementById('form-movimentacao').addEventListener('submit', function(e) {
         const btn = this.querySelector('.btn-submit-loading');
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> PROCESSANDO...';
