@@ -1,16 +1,17 @@
 {
-  "name": "Almox 360 Pro",
+  "name": "ALMOX360 RD",
   "short_name": "Almox360",
-  "description": "Sistema Profissional de Gestão de Almoxarifado",
+  "description": "Sistema de Gestão RD CONILON",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "theme_color": "#2e7d32",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/2897/2897785.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "https://sc02.alicdn.com/kf/A86e116532acf4648a3bbee5646d72e9fH.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
