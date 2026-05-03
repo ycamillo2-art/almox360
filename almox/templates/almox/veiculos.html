@@ -1,46 +1,171 @@
 {% extends 'almox/base.html' %}
+{% block title %}Controle de Veículos{% endblock %}
+
+{% block extra_css %}
+<style>
+    .status-card {
+        border-radius: 15px;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: transform 0.3s;
+    }
+    .status-card:hover { transform: translateY(-5px); }
+    .bg-ok { background-color: #2e7d32; }
+    .bg-alerta { background-color: #fbc02d; color: #333; }
+    .bg-atrasado { background-color: #d32f2f; }
+    
+    .sidebar {
+        width: 250px;
+        background: white;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 20px;
+        border-right: 1px solid #eee;
+    }
+    .main-content { margin-left: 250px; padding: 30px; }
+    .nav-side-link {
+        display: flex;
+        align-items: center;
+        padding: 12px 15px;
+        color: #555;
+        text-decoration: none;
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+    .nav-side-link.active { background: #e8f5e9; color: #2e7d32; font-weight: bold; }
+    .nav-side-link i { margin-right: 15px; width: 20px; text-align: center; }
+    
+    .btn-save { background: #2e7d32; color: white; border: none; padding: 10px 25px; border-radius: 8px; }
+    .btn-clear { background: #1976d2; color: white; border: none; padding: 10px 25px; border-radius: 8px; }
+    .btn-close-custom { background: #90a4ae; color: white; border: none; padding: 10px 25px; border-radius: 8px; }
+    
+    .custom-input { border-radius: 10px; padding: 12px; border: 1px solid #ddd; width: 100%; margin-bottom: 15px; }
+    .status-label { font-size: 0.8rem; font-weight: bold; padding: 5px 10px; border-radius: 5px; }
+    .status-atrasado { color: #d32f2f; background: #ffebee; }
+    .status-alerta { color: #f57f17; background: #fffde7; }
+    .status-ok { color: #2e7d32; background: #e8f5e9; }
+</style>
+{% endblock %}
+
 {% block content %}
-<div class="main-card">
-    <h4 class="font-weight-bold mb-4"><i class="fas fa-truck text-primary"></i> Gerenciamento de Veículos</h4>
-    <form method="post" class="mb-5">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-md-3 form-group">
-                <label>Placa</label>
-                <input type="text" name="placa" class="form-control" required placeholder="ABC-1234">
-            </div>
-            <div class="col-md-6 form-group">
-                <label>Descrição (Marca/Modelo)</label>
-                <input type="text" name="descricao" class="form-control" required placeholder="Ex: Trator John Deere 6125J">
-            </div>
-            <div class="col-md-3 form-group">
-                <label>KM/Horas Atual</label>
-                <input type="number" name="km_atual" class="form-control" required step="0.01">
+<div class="sidebar">
+    <div class="brand-logo mb-5 text-center">
+        <img src="https://sc02.alicdn.com/kf/A3a1bcb4564ec4e4eb66a2c37e75245c5K.png" style="height: 50px;" class="mb-3">
+    </div>
+    
+    <div class="user-pill mb-5 p-3 text-center" style="background: #e8f5e9; border-radius: 15px;">
+        <div class="font-weight-bold">{{ user.username }}</div>
+        <small class="text-success">sessão ativa</small>
+    </div>
+
+    <a href="{% url 'index' %}" class="nav-side-link"><i class="fas fa-box"></i> Almox360</a>
+    <a href="{% url 'cadastro' %}" class="nav-side-link"><i class="fas fa-plus-square"></i> Cadastro</a>
+    <a href="{% url 'movimentacao' %}" class="nav-side-link"><i class="fas fa-exchange-alt"></i> Movimentação</a>
+    <a href="{% url 'relatorios' %}" class="nav-side-link"><i class="fas fa-chart-bar"></i> Relatórios</a>
+    <a href="{% url 'veiculos' %}" class="nav-side-link active"><i class="fas fa-truck"></i> Veículos</a>
+    <form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit" class="btn btn-link nav-side-link w-100" style="text-align: left; padding-left: 15px;"><i class="fas fa-power-off"></i> Sair</button></form>
+</div>
+
+<div class="main-content">
+    <h3 class="font-weight-bold mb-4">Controle de Veículos</h3>
+    
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="status-card bg-ok">
+                <h1 class="font-weight-bold m-0">{{ count_ok }}</h1>
+                <div>OK</div>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary-custom w-100">CADASTRAR VEÍCULO</button>
-    </form>
+        <div class="col-md-4">
+            <div class="status-card bg-alerta">
+                <h1 class="font-weight-bold m-0">{{ count_alerta }}</h1>
+                <div>Alerta</div>
+                <small>Nenhum</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="status-card bg-atrasado">
+                <h1 class="font-weight-bold m-0">{{ count_atrasado }}</h1>
+                <div>Atrasado</div>
+            </div>
+        </div>
+    </div>
 
-    <h5 class="font-weight-bold mb-3">Frota Cadastrada</h5>
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Placa</th>
-                    <th>Descrição</th>
-                    <th>KM/Horas Atual</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for v in veiculos %}
-                <tr>
-                    <td><span class="badge badge-dark p-2">{{ v.placa }}</span></td>
-                    <td>{{ v.descricao }}</td>
-                    <td>{{ v.km_atual }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="main-card">
+        <form method="post" class="mb-5">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="font-weight-bold">Veículo</label>
+                    <input type="text" name="veiculo" class="custom-input" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="font-weight-bold">Última Manutenção</label>
+                    <input type="date" name="ultima_manutencao" class="custom-input" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="font-weight-bold">Próxima Manutenção</label>
+                    <input type="date" name="proxima_manutencao" class="custom-input" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="font-weight-bold">Tipo</label>
+                    <input type="text" name="tipo" class="custom-input" required>
+                </div>
+                <div class="col-md-12">
+                    <label class="font-weight-bold">Responsável</label>
+                    <input type="text" name="responsavel" class="custom-input" required>
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn-save">Salvar</button>
+                <button type="reset" class="btn-clear mx-2">Limpar</button>
+                <a href="{% url 'index' %}" class="btn-close-custom">Fechar</a>
+            </div>
+        </form>
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="text-muted">
+                        <th>Veículo</th>
+                        <th>Última</th>
+                        <th>Próxima</th>
+                        <th>Status</th>
+                        <th>Tipo</th>
+                        <th>Usuário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in registros %}
+                    <tr>
+                        <td class="font-weight-bold">{{ r.veiculo|upper }}</td>
+                        <td>{{ r.ultima_manutencao|date:"Y-m-d" }}</td>
+                        <td>{{ r.proxima_manutencao|date:"Y-m-d" }}</td>
+                        <td>
+                            <span class="status-label status-{{ r.status|lower }}">{{ r.status }}</span>
+                        </td>
+                        <td>{{ r.tipo }}</td>
+                        <td>{{ r.responsavel }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="6" class="text-center text-muted">Nenhum registro encontrado.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
+<style>
+    /* Remove base navbar if on this page */
+    .navbar-custom { display: none !important; }
+    .container { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+</style>
 {% endblock %}
