@@ -136,12 +136,17 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
 <script>
     document.querySelector('form').addEventListener('submit', function(e) {
         if(!this.querySelector('input[name="confirmar_id"]')) {
             const btn = document.getElementById('btn-salvar-v');
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> SALVANDO...';
+            if(btn) {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> SALVANDO...';
+            }
         }
     });
 </script>

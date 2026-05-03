@@ -1,6 +1,6 @@
-const CACHE_NAME = 'almox-v3';
+const CACHE_NAME = 'almox-v1.3.1';
 const ASSETS = [
-  '/manifest.json'
+  '/static/manifest.json'
 ];
 
 self.addEventListener('install', (event) => {
@@ -17,13 +17,22 @@ self.addEventListener('activate', (event) => {
         cacheNames.filter((name) => name !== CACHE_NAME)
           .map((name) => caches.delete(name))
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', (event) => {
-  // Always try network first, then cache
-  event.respondWith(
-    fetch(event.request).catch(() => caches.match(event.request))
-  );
+  // Strategy: Network First
+  // We want to see updates immediately, so we always try the network.
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match(event.request))
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  }
 });
