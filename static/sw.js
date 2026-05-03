@@ -1,4 +1,4 @@
-const CACHE_NAME = 'almox-v2';
+const CACHE_NAME = 'almox-v3';
 const ASSETS = [
   '/manifest.json'
 ];
@@ -22,17 +22,8 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Strategy: Network First for pages, Cache First for static assets if needed
-  // For now, let's keep it simple: always try network first for the site itself
-  if (event.request.mode === 'navigate') {
-    event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
-    );
-  } else {
-    event.respondWith(
-      caches.match(event.request).then((response) => {
-        return response || fetch(event.request);
-      })
-    );
-  }
+  // Always try network first, then cache
+  event.respondWith(
+    fetch(event.request).catch(() => caches.match(event.request))
+  );
 });
