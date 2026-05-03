@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Produto, Historico
+from .models import Produto, Historico, Veiculo, Abastecimento, Manutencao
 from decimal import Decimal
 import re
 import unicodedata
@@ -24,7 +24,7 @@ def index(request):
         'total_itens': total_itens,
         'itens_alerta': alerta,
         'ferramentas_em_uso': int(em_uso),
-        'produtos': produtos[:10], # Mostrar apenas os 10 primeiros no dashboard
+        'produtos': produtos[:10],
     }
     return render(request, 'almox/index.html', context)
 
@@ -38,7 +38,6 @@ def cadastro(request):
         minimo = Decimal(request.POST.get('minimo', '0').replace(',', '.'))
         obs = request.POST.get('observacao', '')
 
-        # Verificar se existe
         existente = None
         for p in Produto.objects.all():
             if normalizar(p.nome) == normalizar(nome):
@@ -50,14 +49,10 @@ def cadastro(request):
             existente.save()
             messages.success(request, f"Estoque atualizado para: {existente.nome}")
         else:
-            # Gerar Código
             prefixos = {"FERRAMENTAS": "FER", "DIVERSOS": "DIV", "DEFENSIVOS": "DEF", "ADUBO": "ADU"}
             prefixo = prefixos.get(categoria, categoria[:3])
             ultimo = Produto.objects.filter(codigo__startswith=prefixo).order_by('-codigo').first()
-            if ultimo:
-                num = int(ultimo.codigo.split('-')[1]) + 1
-            else:
-                num = 1
+            num = (int(ultimo.codigo.split('-')[1]) + 1) if ultimo else 1
             codigo = f"{prefixo}-{str(num).zfill(4)}"
             
             Produto.objects.create(
@@ -65,9 +60,7 @@ def cadastro(request):
                 saldo=saldo, local=local, minimo=minimo, observacao=obs
             )
             messages.success(request, f"Produto cadastrado com sucesso: {codigo}")
-        
         return redirect('cadastro')
-
     return render(request, 'almox/cadastro.html')
 
 @login_required
@@ -83,7 +76,6 @@ def movimentacao(request):
 
         for p_id, q in zip(p_ids, quantidades):
             if not p_id or not q: continue
-            
             produto = Produto.objects.get(id=p_id)
             qtd = Decimal(q.replace(',', '.'))
             
@@ -93,45 +85,76 @@ def movimentacao(request):
             
             saldo_anterior = produto.saldo
             produto.saldo -= qtd
-            
             if 'FERRAMENT' in produto.categoria.upper():
                 produto.em_uso += qtd
-            
             produto.save()
             
             Historico.objects.create(
                 produto_info=f"{produto.codigo} - {produto.nome}",
-                tipo=produto.categoria,
-                quantidade=qtd,
-                responsavel=responsavel,
-                saldo_anterior=saldo_anterior,
-                saldo_atual=produto.saldo,
-                local=produto.local
+                tipo=produto.categoria, quantidade=qtd, responsavel=responsavel,
+                saldo_anterior=saldo_anterior, saldo_atual=produto.saldo, local=produto.local
             )
-        
         messages.success(request, "Movimentação realizada com sucesso!")
         return redirect('index')
-
-    produtos = Produto.objects.all()
-    return render(request, 'almox/movimentacao.html', {'produtos': produtos})
+    return render(request, 'almox/movimentacao.html', {'produtos': Produto.objects.all()})
 
 @login_required
 def relatorios(request):
-    registros = Historico.objects.all()
-    return render(request, 'almox/relatorios.html', {'registros': registros})
+    return render(request, 'almox/relatorios.html', {'registros': Historico.objects.all()})
+
+@login_required
+def veiculos(request):
+    if request.method == 'POST':
+        placa = request.POST.get('placa')
+        desc = request.POST.get('descricao')
+        km = request.POST.get('km_atual')
+        Veiculo.objects.create(placa=placa, descricao=desc, km_atual=km)
+        messages.success(request, "Veículo cadastrado!")
+        return redirect('veiculos')
+    return render(request, 'almox/veiculos.html', {'veiculos': Veiculo.objects.all()})
+
+@login_required
+def abastecimento(request):
+    if request.method == 'POST':
+        v_id = request.POST.get('veiculo')
+        comb = request.POST.get('combustivel')
+        litros = request.POST.get('litros')
+        km = request.POST.get('km')
+        valor = request.POST.get('valor')
+        
+        veiculo = Veiculo.objects.get(id=v_id)
+        Abastecimento.objects.create(
+            veiculo=veiculo, combustivel=comb, litros=litros, 
+            km_no_abastecimento=km, valor_total=valor
+        )
+        veiculo.km_atual = km
+        veiculo.save()
+        messages.success(request, "Abastecimento registrado!")
+        return redirect('index')
+    return render(request, 'almox/abastecimento.html', {'veiculos': Veiculo.objects.all()})
+
+@login_required
+def manutencao(request):
+    if request.method == 'POST':
+        v_id = request.POST.get('veiculo')
+        desc = request.POST.get('descricao')
+        custo = request.POST.get('custo')
+        km = request.POST.get('km')
+        
+        veiculo = Veiculo.objects.get(id=v_id)
+        Manutencao.objects.create(veiculo=veiculo, descricao=desc, custo=custo, km_da_manutencao=km)
+        messages.success(request, "Manutenção registrada!")
+        return redirect('index')
+    return render(request, 'almox/manutencao.html', {'veiculos': Veiculo.objects.all()})
 
 def login_view(request):
     if request.method == 'POST':
-        u = request.POST.get('username')
-        p = request.POST.get('password')
+        u, p = request.POST.get('username'), request.POST.get('password')
         user = authenticate(username=u, password=p)
         if user:
-            login(request, user)
-            return redirect('index')
-        else:
-            messages.error(request, "Usuário ou senha inválidos")
+            login(request, user); return redirect('index')
+        messages.error(request, "Usuário ou senha inválidos")
     return render(request, 'almox/login.html')
 
 def logout_view(request):
-    logout(request)
-    return redirect('login')
+    logout(request); return redirect('login')

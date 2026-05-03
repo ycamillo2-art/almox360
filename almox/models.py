@@ -1,5 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 class Produto(models.Model):
     CATEGORIAS = [
@@ -31,17 +30,37 @@ class Produto(models.Model):
 
 class Historico(models.Model):
     data = models.DateTimeField(auto_now_add=True)
-    produto_info = models.CharField(max_length=255) # Armazena como texto para histórico permanente
-    tipo = models.CharField(max_length=50) # Categoria ou Tipo de Movimentação
+    produto_info = models.CharField(max_length=255)
+    tipo = models.CharField(max_length=50)
     quantidade = models.DecimalField(max_digits=12, decimal_places=2)
     responsavel = models.CharField(max_length=100)
     saldo_anterior = models.DecimalField(max_digits=12, decimal_places=2)
     saldo_atual = models.DecimalField(max_digits=12, decimal_places=2)
     local = models.CharField(max_length=50)
-    devolvido = models.CharField(max_length=10, default='NÃO') # SIM/NÃO/NA
+    devolvido = models.CharField(max_length=10, default='NÃO')
 
     class Meta:
         ordering = ['-data']
 
+class Veiculo(models.Model):
+    placa = models.CharField(max_length=10, unique=True)
+    descricao = models.CharField(max_length=200)
+    km_atual = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+
     def __str__(self):
-        return f"{self.data.strftime('%d/%m/%Y')} - {self.produto_info}"
+        return f"{self.placa} - {self.descricao}"
+
+class Abastecimento(models.Model):
+    data = models.DateTimeField(auto_now_add=True)
+    veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
+    combustivel = models.CharField(max_length=50)
+    litros = models.DecimalField(max_digits=10, decimal_places=2)
+    km_no_abastecimento = models.DecimalField(max_digits=12, decimal_places=2)
+    valor_total = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+
+class Manutencao(models.Model):
+    data = models.DateTimeField(auto_now_add=True)
+    veiculo = models.ForeignKey(Veiculo, on_delete=models.CASCADE)
+    descricao = models.TextField()
+    custo = models.DecimalField(max_digits=12, decimal_places=2)
+    km_da_manutencao = models.DecimalField(max_digits=12, decimal_places=2)
