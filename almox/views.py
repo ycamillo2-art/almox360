@@ -20,7 +20,7 @@ def index(request):
         'total_itens': produtos.count(),
         'itens_alerta': sum(1 for p in produtos if p.saldo <= p.minimo),
         'ferramentas_em_uso': int(sum(p.em_uso for p in produtos if 'FERRAMENT' in p.categoria.upper())),
-        'produtos': produtos[:10],
+        'produtos': produtos,
     }
     return render(request, 'almox/index.html', context)
 
