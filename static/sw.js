@@ -40,8 +40,16 @@ self.addEventListener('activate', (event) => {
 
 // Interceptação de Requisições
 self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+
+  // NUNCA cacheia páginas de autenticação para evitar tokens CSRF expirados
+  if (url.pathname === '/login/' || url.pathname === '/cadastro/') {
+    return;
+  }
+
   // Apenas lidamos com GET
   if (event.request.method !== 'GET') return;
+
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
