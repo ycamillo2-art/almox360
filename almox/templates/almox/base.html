@@ -304,9 +304,9 @@
         
         <div class="px-3 py-4">
             <div class="user-pill mb-4">
-                <div class="user-avatar-small">{{ user.username|first|upper }}</div>
+                <div class="user-avatar-small">{% if user.first_name %}{{ user.first_name|first|upper }}{% else %}{{ user.username|first|upper }}{% endif %}</div>
                 <div>
-                    <div class="user-name-small">{{ user.username }}</div>
+                    <div class="user-name-small">{% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}</div>
                     <div class="user-status-dot">sessão ativa</div>
                 </div>
             </div>
@@ -362,7 +362,7 @@
                             if (result.isConfirmed) {
                                 Swal.fire({
                                     title: 'Salvando registros...',
-                                    text: 'Obrigado pelo trabalho hoje, {{ user.username|upper }}!',
+                                    text: 'Obrigado pelo trabalho hoje, {% if user.first_name %}{{ user.first_name|upper }}{% else %}{{ user.username|upper }}{% endif %}!',
                                     icon: 'success',
                                     timer: 2500,
                                     showConfirmButton: false,
