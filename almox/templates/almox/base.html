@@ -131,6 +131,7 @@
             z-index: 1000;
             overflow-y: auto; /* Permitir rolagem se os botões forem muitos */
             padding-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
         }
         .brand-section { text-align: center; margin-bottom: 40px; }
         .brand-logo-img { height: 60px; }
@@ -326,11 +327,12 @@
     {% endif %}
 
     {% if user.is_authenticated %}
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
     {% block header_nav %}
     <!-- Mobile Navbar -->
     <nav class="mobile-nav d-lg-none">
         <div class="d-flex align-items-center">
-            <button class="btn text-white p-0 mr-3" id="sidebarCollapse">
+            <button class="btn text-white p-0 mr-3" id="sidebarToggle">
                 <i class="fas fa-bars fa-lg"></i>
             </button>
             <span class="font-weight-bold tracking-tight">ALMOX360</span>
@@ -339,7 +341,7 @@
     </nav>
 
     <!-- Sidebar Desktop -->
-    <div class="sidebar d-none d-lg-block">
+    <div class="sidebar d-none d-lg-block" id="sidebar">
         <div class="sidebar-header">
             <img src="https://sc01.alicdn.com/kf/Af476ff7174de4cf79ad778fe46cc2de7Q.jpg" alt="RD Logo" class="sidebar-logo">
             <div class="text-center">
@@ -548,9 +550,8 @@
         $(document).ready(processSyncQueue);
 
         // Sidebar Toggle for Mobile
-
         const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
+        const overlay = document.getElementById('sidebarOverlay');
         const toggleBtn = document.getElementById('sidebarToggle');
 
         if(toggleBtn) {
