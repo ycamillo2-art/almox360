@@ -1,40 +1,71 @@
 {% extends 'almox/base.html' %}
 
 {% block content %}
-<div class="row justify-content-center align-items-center" style="min-height: 80vh;">
-    <div class="col-md-5">
-        <div class="main-card text-center">
-            <h2 class="brand-logo mb-4" style="font-size: 2.5rem;">ALMOX<span>360</span></h2>
-            <p class="text-muted mb-4">Acesse o sistema de almoxarifado</p>
+<style>
+    body {
+        background: url('https://sc01.alicdn.com/kf/A50dab64c2acd4195a772f129afc8e83cn.png') center/cover no-repeat fixed !important;
+        position: relative;
+    }
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.6);
+        z-index: -1;
+    }
+    .login-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+    .brand-logo { font-weight: 900; color: #1565c0; letter-spacing: -1px; }
+    .brand-logo span { color: #5d4037; }
+    .btn-login {
+        background: linear-gradient(135deg, #1565c0, #0d47a1);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        padding: 15px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        box-shadow: 0 10px 25px rgba(21, 101, 192, 0.3);
+        transition: all 0.3s ease;
+    }
+    .btn-login:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(21, 101, 192, 0.4); color: white; }
+</style>
+
+<div class="row justify-content-center align-items-center" style="min-height: 90vh;">
+    <div class="col-md-5 col-lg-4">
+        <div class="login-card text-center">
+            <img src="https://sc01.alicdn.com/kf/Af476ff7174de4cf79ad778fe46cc2de7Q.jpg" alt="RD Logo" style="height: 100px; margin-bottom: 20px; border-radius: 15px;">
+            <h2 class="brand-logo mb-2">ALMOX<span>360</span></h2>
+            <p class="text-muted mb-4 font-weight-bold uppercase text-[10px]" style="letter-spacing: 2px;">Gestão de Materiais e Insumos</p>
             
             <form method="post">
                 {% csrf_token %}
                 <div class="form-group text-left">
-                    <label class="font-weight-bold">Usuário</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white border-right-0"><i class="fas fa-user text-muted"></i></span>
-                        </div>
-                        <input type="text" name="username" class="form-control border-left-0" required>
-                    </div>
+                    <label class="font-weight-bold text-muted small uppercase">Usuário</label>
+                    <input type="text" name="username" class="form-control form-control-custom" required placeholder="Digite seu usuário">
                 </div>
                 
                 <div class="form-group text-left">
-                    <label class="font-weight-bold">Senha</label>
+                    <label class="font-weight-bold text-muted small uppercase">Senha</label>
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-white border-right-0"><i class="fas fa-lock text-muted"></i></span>
-                        </div>
-                        <input type="password" name="password" id="password" class="form-control border-left-0" required>
+                        <input type="password" name="password" id="password" class="form-control form-control-custom border-right-0" required placeholder="••••••••">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary border-left-0 bg-white" type="button" id="togglePassword">
-                                <i class="fas fa-eye" id="eyeIcon"></i>
-                            </button>
+                            <span class="input-group-text bg-white border-left-0" style="border-radius: 0 10px 10px 0; border: 1px solid #ddd; border-left: none;">
+                                <button class="btn btn-link p-0 text-muted" type="button" id="togglePassword">
+                                    <i class="fas fa-eye" id="eyeIcon"></i>
+                                </button>
+                            </span>
                         </div>
                     </div>
                 </div>
                 
-                <button type="submit" class="btn btn-success-custom w-100 btn-custom mt-4">ENTRAR NO SISTEMA</button>
+                <button type="submit" class="btn btn-login w-100 mt-4">ENTRAR NO SISTEMA</button>
             </form>
         </div>
     </div>
