@@ -251,29 +251,54 @@
             margin-top: 15px;
         }
 
-        /* Mobile Overlay */
+        /* Floating Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #000; /* Preto como pedido */
+            color: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 1100;
+            border: 3px solid rgba(255,255,255,0.1);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .mobile-menu-btn:active {
+            transform: scale(0.9);
+        }
+        
         .sidebar-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(0,0,0,0.5);
-            z-index: 999;
+            z-index: 1050;
+            backdrop-filter: blur(3px);
         }
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .mobile-header { display: flex; }
+            .mobile-menu-btn { display: flex; }
+            .mobile-nav { display: none !important; } /* Esconder a barra de cima */
             .sidebar {
                 transform: translateX(-100%);
                 top: 0;
                 box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+                z-index: 1101;
             }
             .sidebar.show { transform: translateX(0); }
             .sidebar-overlay.show { display: block; }
             .main-wrapper {
                 margin-left: 0;
                 width: 100%;
-                padding: 70px 10px 30px;
+                padding: 30px 15px;
             }
             .content-card { padding: 15px; border-radius: 15px; width: 100%; }
             .dash-card { padding: 15px; height: 100px; margin-bottom: 15px; }
@@ -328,16 +353,19 @@
 
     {% if user.is_authenticated %}
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Botão Flutuante Mobile (Preto e Grande) -->
+    <button class="mobile-menu-btn d-lg-none" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
     {% block header_nav %}
-    <!-- Mobile Navbar -->
-    <nav class="mobile-nav d-lg-none">
-        <div class="d-flex align-items-center">
-            <button class="btn text-white p-0 mr-3" id="sidebarToggle">
-                <i class="fas fa-bars fa-lg"></i>
-            </button>
-            <span class="font-weight-bold tracking-tight">ALMOX360</span>
+    <!-- Mobile Navbar (Simplificada) -->
+    <nav class="mobile-nav d-lg-none p-3 bg-white shadow-sm mb-4">
+        <div class="d-flex align-items-center justify-content-between">
+            <span class="font-weight-bold tracking-tight text-dark">ALMOX360</span>
+            <img src="https://sc01.alicdn.com/kf/Af476ff7174de4cf79ad778fe46cc2de7Q.jpg" alt="Logo" class="rounded-circle" style="height: 35px; width: 35px; object-fit: cover;">
         </div>
-        <img src="https://sc01.alicdn.com/kf/Af476ff7174de4cf79ad778fe46cc2de7Q.jpg" alt="Logo" class="rounded-circle" style="height: 35px; width: 35px; object-fit: cover;">
     </nav>
 
     <!-- Sidebar Desktop -->
@@ -552,12 +580,21 @@
         // Sidebar Toggle for Mobile
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebarOverlay');
-        const toggleBtn = document.getElementById('sidebarToggle');
+        const toggleBtn = document.getElementById('mobileMenuToggle');
 
         if(toggleBtn) {
             toggleBtn.addEventListener('click', () => {
                 sidebar.classList.toggle('show');
                 overlay.classList.toggle('show');
+                // Alternar ícone se quiser (opcional)
+                const icon = toggleBtn.querySelector('i');
+                if (sidebar.classList.contains('show')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
         }
 
