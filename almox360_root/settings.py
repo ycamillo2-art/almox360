@@ -127,7 +127,7 @@ NUMBER_GROUPING = 3
 # Login Settings
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login/'
+LOGOUT_REDIRECT_URL = 'https://fazenda360.onrender.com'
 
 # Segurança de Sessão - Atualizado para Modo Offline (30 dias)
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
