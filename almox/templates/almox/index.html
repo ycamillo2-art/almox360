@@ -202,66 +202,56 @@
 
 {% block extra_js %}
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.getElementById('searchInput');
-        const noResults = document.getElementById('noResults');
-        const productTable = document.getElementById('productTable');
-        const mobileProducts = document.getElementById('mobileProducts');
-
-        if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                const value = this.value.toLowerCase().trim();
-                let hasVisibleItems = false;
+    $(document).ready(function() {
+        console.log("Search script initialized");
+        
+        $("#searchInput").on("input", function() {
+            const value = $(this).val().toLowerCase().trim();
+            let hasVisibleItems = false;
+            
+            // Filter Desktop Table
+            $("#productTable tbody tr").each(function() {
+                const row = $(this);
+                const nome = row.find('td:eq(1)').text().toLowerCase();
+                const categoria = row.find('td:eq(2)').text().toLowerCase();
+                const local = row.find('td:eq(4)').text().toLowerCase();
                 
-                // 1. Filter Desktop Table
-                const tableRows = document.querySelectorAll('#productTable tbody tr');
-                tableRows.forEach(row => {
-                    // Just in case cells are missing, we check safely
-                    if (row.cells.length >= 5) {
-                        const nome = row.cells[1].textContent.toLowerCase();
-                        const categoria = row.cells[2].textContent.toLowerCase();
-                        const local = row.cells[4].textContent.toLowerCase();
-                        
-                        if (nome.includes(value) || categoria.includes(value) || local.includes(value)) {
-                            row.style.setProperty('display', '', 'important');
-                            hasVisibleItems = true;
-                        } else {
-                            row.style.setProperty('display', 'none', 'important');
-                        }
-                    }
-                });
-
-                // 2. Filter Mobile Cards
-                const cards = document.querySelectorAll('.mobile-item');
-                cards.forEach(card => {
-                    const cardContent = card.textContent.toLowerCase();
-                    if (cardContent.includes(value)) {
-                        card.style.setProperty('display', 'block', 'important');
-                        // In mobile view (width <= 768), we use cards to determine visibility
-                        if (window.innerWidth <= 768) hasVisibleItems = true;
-                    } else {
-                        card.style.setProperty('display', 'none', 'important');
-                    }
-                });
-
-                // 3. Toggle Empty State Feedback
-                if (value !== "" && !hasVisibleItems) {
-                    noResults.style.display = 'block';
-                    if (productTable) productTable.closest('.table-container').style.display = 'none';
-                    if (mobileProducts) mobileProducts.style.display = 'none';
+                if (nome.includes(value) || categoria.includes(value) || local.includes(value)) {
+                    row.show();
+                    hasVisibleItems = true;
                 } else {
-                    noResults.style.display = 'none';
-                    // Restore containers based on screen size
-                    if (window.innerWidth > 768) {
-                        if (productTable) productTable.closest('.table-container').style.display = 'block';
-                        if (mobileProducts) mobileProducts.style.display = 'none';
-                    } else {
-                        if (productTable) productTable.closest('.table-container').style.display = 'none';
-                        if (mobileProducts) mobileProducts.style.display = 'block';
-                    }
+                    row.hide();
                 }
             });
-        }
+
+            // Filter Mobile Cards
+            $(".mobile-item").each(function() {
+                const card = $(this);
+                const text = card.text().toLowerCase();
+                if (text.includes(value)) {
+                    card.show();
+                    if (window.innerWidth <= 768) hasVisibleItems = true;
+                } else {
+                    card.hide();
+                }
+            });
+
+            // Handle Empty State
+            if (value !== "" && !hasVisibleItems) {
+                $("#noResults").show();
+                $(".table-container").hide();
+                $("#mobileProducts").hide();
+            } else {
+                $("#noResults").hide();
+                if (window.innerWidth > 768) {
+                    $(".table-container").show();
+                    $("#mobileProducts").hide();
+                } else {
+                    $(".table-container").hide();
+                    $("#mobileProducts").show();
+                }
+            }
+        });
     });
 </script>
 {% endblock %}
