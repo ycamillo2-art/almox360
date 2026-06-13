@@ -202,59 +202,66 @@
 
 {% block extra_js %}
 <script>
-    const searchInput = document.getElementById('searchInput');
-    const noResults = document.getElementById('noResults');
-    const productTable = document.getElementById('productTable');
-    const mobileProducts = document.getElementById('mobileProducts');
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const noResults = document.getElementById('noResults');
+        const productTable = document.getElementById('productTable');
+        const mobileProducts = document.getElementById('mobileProducts');
 
-    if (searchInput) {
-        searchInput.addEventListener('input', function() {
-            let value = this.value.toLowerCase().trim();
-            let hasVisibleItems = false;
-            
-            // Filter Table (Desktop)
-            let rows = document.querySelectorAll('#productTable tbody tr');
-            rows.forEach(row => {
-                // Check Nome (index 1), Categoria (index 2), Local (index 4)
-                let nome = row.cells[1].innerText.toLowerCase();
-                let categoria = row.cells[2].innerText.toLowerCase();
-                let local = row.cells[4].innerText.toLowerCase();
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                const value = this.value.toLowerCase().trim();
+                let hasVisibleItems = false;
                 
-                if (nome.includes(value) || categoria.includes(value) || local.includes(value)) {
-                    row.style.display = '';
-                    hasVisibleItems = true;
+                // 1. Filter Desktop Table
+                const tableRows = document.querySelectorAll('#productTable tbody tr');
+                tableRows.forEach(row => {
+                    // Just in case cells are missing, we check safely
+                    if (row.cells.length >= 5) {
+                        const nome = row.cells[1].textContent.toLowerCase();
+                        const categoria = row.cells[2].textContent.toLowerCase();
+                        const local = row.cells[4].textContent.toLowerCase();
+                        
+                        if (nome.includes(value) || categoria.includes(value) || local.includes(value)) {
+                            row.style.setProperty('display', '', 'important');
+                            hasVisibleItems = true;
+                        } else {
+                            row.style.setProperty('display', 'none', 'important');
+                        }
+                    }
+                });
+
+                // 2. Filter Mobile Cards
+                const cards = document.querySelectorAll('.mobile-item');
+                cards.forEach(card => {
+                    const cardContent = card.textContent.toLowerCase();
+                    if (cardContent.includes(value)) {
+                        card.style.setProperty('display', 'block', 'important');
+                        // In mobile view (width <= 768), we use cards to determine visibility
+                        if (window.innerWidth <= 768) hasVisibleItems = true;
+                    } else {
+                        card.style.setProperty('display', 'none', 'important');
+                    }
+                });
+
+                // 3. Toggle Empty State Feedback
+                if (value !== "" && !hasVisibleItems) {
+                    noResults.style.display = 'block';
+                    if (productTable) productTable.closest('.table-container').style.display = 'none';
+                    if (mobileProducts) mobileProducts.style.display = 'none';
                 } else {
-                    row.style.display = 'none';
+                    noResults.style.display = 'none';
+                    // Restore containers based on screen size
+                    if (window.innerWidth > 768) {
+                        if (productTable) productTable.closest('.table-container').style.display = 'block';
+                        if (mobileProducts) mobileProducts.style.display = 'none';
+                    } else {
+                        if (productTable) productTable.closest('.table-container').style.display = 'none';
+                        if (mobileProducts) mobileProducts.style.display = 'block';
+                    }
                 }
             });
-
-            // Filter Cards (Mobile)
-            let cards = document.querySelectorAll('.mobile-item');
-            cards.forEach(card => {
-                let cardText = card.innerText.toLowerCase();
-                if (cardText.includes(value)) {
-                    card.style.display = '';
-                    if (window.innerWidth <= 768) hasVisibleItems = true;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Show/Hide No Results message
-            if (value === "") {
-                noResults.style.display = 'none';
-                if (window.innerWidth > 768) productTable.style.display = '';
-                mobileProducts.style.display = '';
-            } else if (!hasVisibleItems) {
-                noResults.style.display = 'block';
-                if (window.innerWidth > 768) productTable.style.display = 'none';
-                mobileProducts.style.display = 'none';
-            } else {
-                noResults.style.display = 'none';
-                if (window.innerWidth > 768) productTable.style.display = '';
-                mobileProducts.style.display = '';
-            }
-        });
-    }
+        }
+    });
 </script>
 {% endblock %}
