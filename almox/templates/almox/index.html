@@ -203,52 +203,53 @@
 {% block extra_js %}
 <script>
     $(document).ready(function() {
-        console.log("Search script initialized");
+        console.log("ALMOX360 Search script initialized");
         
-        $("#searchInput").on("input", function() {
+        $("#searchInput").on("input keyup change", function() {
             const value = $(this).val().toLowerCase().trim();
+            console.log("Filtering for: " + value);
+            
             let hasVisibleItems = false;
             
-            // Filter Desktop Table
+            // Filter Table Rows
             $("#productTable tbody tr").each(function() {
                 const row = $(this);
-                const nome = row.find('td:eq(1)').text().toLowerCase();
-                const categoria = row.find('td:eq(2)').text().toLowerCase();
-                const local = row.find('td:eq(4)').text().toLowerCase();
+                // Search in the whole row content to be 100% sure
+                const content = row.text().toLowerCase();
                 
-                if (nome.includes(value) || categoria.includes(value) || local.includes(value)) {
-                    row.show();
+                if (content.indexOf(value) > -1) {
+                    row.attr('style', 'display: table-row !important');
                     hasVisibleItems = true;
                 } else {
-                    row.hide();
+                    row.attr('style', 'display: none !important');
                 }
             });
 
             // Filter Mobile Cards
             $(".mobile-item").each(function() {
                 const card = $(this);
-                const text = card.text().toLowerCase();
-                if (text.includes(value)) {
-                    card.show();
+                const content = card.text().toLowerCase();
+                if (content.indexOf(value) > -1) {
+                    card.attr('style', 'display: block !important');
                     if (window.innerWidth <= 768) hasVisibleItems = true;
                 } else {
-                    card.hide();
+                    card.attr('style', 'display: none !important');
                 }
             });
 
-            // Handle Empty State
+            // Feedback and Containers
             if (value !== "" && !hasVisibleItems) {
-                $("#noResults").show();
-                $(".table-container").hide();
-                $("#mobileProducts").hide();
+                $("#noResults").attr('style', 'display: block !important');
+                $(".table-container").attr('style', 'display: none !important');
+                $("#mobileProducts").attr('style', 'display: none !important');
             } else {
-                $("#noResults").hide();
+                $("#noResults").attr('style', 'display: none !important');
                 if (window.innerWidth > 768) {
-                    $(".table-container").show();
-                    $("#mobileProducts").hide();
+                    $(".table-container").attr('style', 'display: block !important');
+                    $("#mobileProducts").attr('style', 'display: none !important');
                 } else {
-                    $(".table-container").hide();
-                    $("#mobileProducts").show();
+                    $(".table-container").attr('style', 'display: none !important');
+                    $("#mobileProducts").attr('style', 'display: block !important');
                 }
             }
         });
