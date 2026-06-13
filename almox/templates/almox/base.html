@@ -136,14 +136,60 @@
         .brand-logo-img { height: 60px; }
         
         .user-pill {
-            background: #e8f5e9;
-            border-radius: 12px;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 30px;
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 35px;
+            border: 1px solid #edf2f7;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
-        .user-name { font-weight: 700; color: #333; display: block; }
-        .user-status { font-size: 12px; color: #2e7d32; }
+        .user-avatar-small {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), #1e88e5);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            box-shadow: 0 5px 15px rgba(21, 101, 192, 0.2);
+            border: 2px solid white;
+        }
+        .user-name-small { 
+            font-size: 13px; 
+            font-weight: 800; 
+            color: #1a202c; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .user-status-dot { 
+            font-size: 9px; 
+            font-weight: 700; 
+            color: #94a3b8; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .user-status-dot::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: #4ade80;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #4ade80;
+        }
         
         .nav-menu { list-style: none; padding: 0; margin: 0; }
         .nav-item-custom { margin-bottom: 5px; }
