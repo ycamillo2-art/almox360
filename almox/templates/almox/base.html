@@ -122,15 +122,15 @@
         /* Sidebar Styles */
         .sidebar {
             width: var(--sidebar-width);
-            background: white;
             height: 100vh;
+            background: white;
             position: fixed;
             left: 0;
             top: 0;
-            padding: 30px 20px;
-            border-right: 1px solid #e0e0e0;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
             z-index: 1000;
-            transition: transform 0.3s ease;
+            overflow-y: auto; /* Permitir rolagem se os botões forem muitos */
+            padding-bottom: 20px;
         }
         .brand-section { text-align: center; margin-bottom: 40px; }
         .brand-logo-img { height: 60px; }
