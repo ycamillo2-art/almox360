@@ -280,76 +280,90 @@
     {% endif %}
 
     {% if user.is_authenticated %}
-    <div class="mobile-header">
-        <button class="btn p-0" id="sidebarToggle" style="font-size: 24px; color: var(--primary-green);">
-            <i class="fas fa-bars"></i>
-        </button>
-        <img src="https://sc02.alicdn.com/kf/A3a1bcb4564ec4e4eb66a2c37e75245c5K.png" style="height: 35px;">
-        <div style="width: 24px;"></div> <!-- Spacer -->
-    </div>
+    {% block header_nav %}
+    <!-- Mobile Navbar -->
+    <nav class="mobile-nav d-lg-none">
+        <div class="d-flex align-items-center">
+            <button class="btn text-white p-0 mr-3" id="sidebarCollapse">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+            <span class="font-weight-bold tracking-tight">ALMOX360</span>
+        </div>
+        <img src="https://sc01.alicdn.com/kf/Af476ff7174de4cf79ad778fe46cc2de7Q.jpg" alt="Logo" class="rounded-circle" style="height: 35px; width: 35px; object-fit: cover;">
+    </nav>
 
-    <div class="sidebar-overlay" id="overlay"></div>
-
-    <div class="sidebar" id="sidebar">
-        <div class="brand-section d-none d-md-block">
-            <img src="https://sc02.alicdn.com/kf/A3a1bcb4564ec4e4eb66a2c37e75245c5K.png" class="brand-logo-img">
+    <!-- Sidebar Desktop -->
+    <div class="sidebar d-none d-lg-block">
+        <div class="sidebar-header">
+            <img src="https://sc01.alicdn.com/kf/Af476ff7174de4cf79ad778fe46cc2de7Q.jpg" alt="RD Logo" class="sidebar-logo">
+            <div class="text-center">
+                <h4 class="m-0 font-weight-bold" style="letter-spacing: -1px;">ALMOX360</h4>
+                <p class="text-muted small m-0 opacity-50 uppercase tracking-widest" style="font-size: 8px;">Sistema de Gestão</p>
+            </div>
         </div>
         
-        <div class="user-pill">
-            <span class="user-name">{{ user.username|lower }}</span>
-            <span class="user-status">sessão ativa</span>
+        <div class="px-3 py-4">
+            <div class="user-pill mb-4">
+                <div class="user-avatar-small">{{ user.username|first|upper }}</div>
+                <div>
+                    <div class="user-name-small">{{ user.username }}</div>
+                    <div class="user-status-dot">sessão ativa</div>
+                </div>
+            </div>
+
+            <ul class="nav flex-column">
+                <li class="nav-item-custom">
+                    <a href="{% url 'index' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+                        <i class="fas fa-th-large"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item-custom">
+                    <a href="{% url 'cadastro' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'cadastro' %}active{% endif %}">
+                        <i class="fas fa-plus-square"></i> Cadastro
+                    </a>
+                </li>
+                <li class="nav-item-custom">
+                    <a href="{% url 'movimentacao' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'movimentacao' %}active{% endif %}">
+                        <i class="fas fa-exchange-alt"></i> Movimentação
+                    </a>
+                </li>
+                <li class="nav-item-custom">
+                    <a href="{% url 'relatorios' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'relatorios' %}active{% endif %}">
+                        <i class="fas fa-file-alt"></i> Relatórios
+                    </a>
+                </li>
+                <li class="nav-item-custom">
+                    <a href="{% url 'veiculos' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'veiculos' %}active{% endif %}">
+                        <i class="fas fa-truck"></i> Veículos
+                    </a>
+                </li>
+                
+                <li class="nav-item-custom mt-4">
+                    <a href="#" onclick="event.preventDefault(); Swal.fire({
+                        title: 'Deseja voltar ao Portal?',
+                        text: 'Você será redirecionado para o Hub de Sistemas.',
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonColor: '#1565c0',
+                        cancelButtonColor: '#d32f2f',
+                        confirmButtonText: 'Sim, ir ao Portal',
+                        cancelButtonText: 'Ficar aqui'
+                    }).then((result) => { if (result.isConfirmed) window.location.href = 'https://fazenda360.onrender.com'; });" class="nav-link-custom">
+                        <i class="fas fa-th-large"></i> Portal
+                    </a>
+                </li>
+                <li class="nav-item-custom">
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-link nav-link-custom w-100" style="text-align: left;">
+                            <i class="fas fa-power-off"></i> Sair
+                        </button>
+                    </form>
+                </li>
+            </ul>
         </div>
-        
-        <ul class="nav-menu">
-            <li class="nav-item-custom">
-                <a href="{% url 'index' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
-                    <i class="fas fa-th-large"></i> Almox360
-                </a>
-            </li>
-            <li class="nav-item-custom">
-                <a href="{% url 'cadastro' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'cadastro' %}active{% endif %}">
-                    <i class="far fa-plus-square"></i> Cadastro
-                </a>
-            </li>
-            <li class="nav-item-custom">
-                <a href="{% url 'movimentacao' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'movimentacao' %}active{% endif %}">
-                    <i class="fas fa-exchange-alt"></i> Movimentação
-                </a>
-            </li>
-            <li class="nav-item-custom">
-                <a href="{% url 'relatorios' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'relatorios' %}active{% endif %}">
-                    <i class="fas fa-chart-bar"></i> Relatórios
-                </a>
-            </li>
-            <li class="nav-item-custom">
-                <a href="{% url 'veiculos' %}" class="nav-link-custom {% if request.resolver_match.url_name == 'veiculos' %}active{% endif %}">
-                    <i class="fas fa-truck"></i> Veículos
-                </a>
-            </li>
-            <li class="nav-item-custom mt-4">
-                <a href="#" onclick="event.preventDefault(); Swal.fire({
-                    title: 'Deseja voltar ao Portal?',
-                    text: 'Você será redirecionado para o Hub de Sistemas.',
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: '#1565c0',
-                    cancelButtonColor: '#d32f2f',
-                    confirmButtonText: 'Sim, ir ao Portal',
-                    cancelButtonText: 'Ficar aqui'
-                }).then((result) => { if (result.isConfirmed) window.location.href = 'https://fazenda360.onrender.com'; });" class="nav-link-custom">
-                    <i class="fas fa-th-large"></i> Portal
-                </a>
-            </li>
-            <li class="nav-item-custom">
-                <form action="{% url 'logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-link nav-link-custom w-100" style="text-align: left;">
-                        <i class="fas fa-power-off"></i> Sair
-                    </button>
-                </form>
-            </li>
-        </ul>
     </div>
+    {% endblock %}
     {% endif %}
 
     <div class="{% if user.is_authenticated %}main-wrapper{% else %}container{% endif %}">
