@@ -339,21 +339,41 @@
                 </li>
                 
                 <li class="nav-item-custom mt-4">
-                    <form action="{% url 'logout' %}" method="post" id="portalLogoutFormAlmox">
+                    <button type="button" onclick="confirmarSaidaPortalAlmox()" class="nav-link-custom btn btn-link w-100" style="text-align: left; border: none;">
+                        <i class="fas fa-th-large"></i> Portal
+                    </button>
+                    <form action="{% url 'logout' %}" method="post" id="portalLogoutFormAlmox" style="display: none;">
                         {% csrf_token %}
-                        <button type="submit" class="nav-link-custom btn btn-link w-100" style="text-align: left; border: none;">
-                            <i class="fas fa-th-large"></i> Portal
-                        </button>
                     </form>
                 </li>
-                <li class="nav-item-custom">
-                    <form action="{% url 'logout' %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-link nav-link-custom w-100" style="text-align: left;">
-                            <i class="fas fa-power-off"></i> Sair
-                        </button>
-                    </form>
-                </li>
+
+                <script>
+                    function confirmarSaidaPortalAlmox() {
+                        Swal.fire({
+                            title: 'Deseja voltar ao Portal?',
+                            text: "Sua sessão será encerrada com segurança.",
+                            icon: 'question',
+                            showCancelButton: true,
+                            confirmButtonColor: '#1565c0',
+                            cancelButtonColor: '#d32f2f',
+                            confirmButtonText: 'Sim, encerrar',
+                            cancelButtonText: 'Ficar aqui'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: 'Salvando registros...',
+                                    text: 'Obrigado pelo trabalho hoje, {{ user.username|upper }}!',
+                                    icon: 'success',
+                                    timer: 2500,
+                                    showConfirmButton: false,
+                                    timerProgressBar: true
+                                }).then(() => {
+                                    document.getElementById('portalLogoutFormAlmox').submit();
+                                });
+                            }
+                        });
+                    }
+                </script>
             </ul>
         </div>
     </div>
