@@ -339,18 +339,12 @@
                 </li>
                 
                 <li class="nav-item-custom mt-4">
-                    <a href="#" onclick="event.preventDefault(); Swal.fire({
-                        title: 'Deseja voltar ao Portal?',
-                        text: 'Você será redirecionado para o Hub de Sistemas.',
-                        icon: 'question',
-                        showCancelButton: true,
-                        confirmButtonColor: '#1565c0',
-                        cancelButtonColor: '#d32f2f',
-                        confirmButtonText: 'Sim, ir ao Portal',
-                        cancelButtonText: 'Ficar aqui'
-                    }).then((result) => { if (result.isConfirmed) window.location.href = 'https://fazenda360.onrender.com'; });" class="nav-link-custom">
-                        <i class="fas fa-th-large"></i> Portal
-                    </a>
+                    <form action="{% url 'logout' %}" method="post" id="portalLogoutFormAlmox">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-link-custom btn btn-link w-100" style="text-align: left; border: none;">
+                            <i class="fas fa-th-large"></i> Portal
+                        </button>
+                    </form>
                 </li>
                 <li class="nav-item-custom">
                     <form action="{% url 'logout' %}" method="post">
