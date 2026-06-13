@@ -115,7 +115,12 @@
 </div>
 
 <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar produto...">
+    <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar por produto, categoria ou local...">
+</div>
+
+<div id="noResults" class="text-center py-5" style="display: none;">
+    <i class="fas fa-search fa-3x text-muted mb-3"></i>
+    <p class="text-muted font-weight-bold">Nenhum item encontrado para sua busca.</p>
 </div>
 
 <!-- MOBILE VERSION (CARDS) -->
@@ -198,21 +203,57 @@
 {% block extra_js %}
 <script>
     const searchInput = document.getElementById('searchInput');
+    const noResults = document.getElementById('noResults');
+    const productTable = document.getElementById('productTable');
+    const mobileProducts = document.getElementById('mobileProducts');
+
     if (searchInput) {
-        searchInput.addEventListener('keyup', function() {
-            let value = this.value.toLowerCase();
+        searchInput.addEventListener('input', function() {
+            let value = this.value.toLowerCase().trim();
+            let hasVisibleItems = false;
             
             // Filter Table (Desktop)
             let rows = document.querySelectorAll('#productTable tbody tr');
             rows.forEach(row => {
-                row.style.display = row.innerText.toLowerCase().includes(value) ? '' : 'none';
+                // Check Nome (index 1), Categoria (index 2), Local (index 4)
+                let nome = row.cells[1].innerText.toLowerCase();
+                let categoria = row.cells[2].innerText.toLowerCase();
+                let local = row.cells[4].innerText.toLowerCase();
+                
+                if (nome.includes(value) || categoria.includes(value) || local.includes(value)) {
+                    row.style.display = '';
+                    hasVisibleItems = true;
+                } else {
+                    row.style.display = 'none';
+                }
             });
 
             // Filter Cards (Mobile)
             let cards = document.querySelectorAll('.mobile-item');
             cards.forEach(card => {
-                card.style.display = card.innerText.toLowerCase().includes(value) ? '' : 'none';
+                let cardText = card.innerText.toLowerCase();
+                if (cardText.includes(value)) {
+                    card.style.display = '';
+                    if (window.innerWidth <= 768) hasVisibleItems = true;
+                } else {
+                    card.style.display = 'none';
+                }
             });
+
+            // Show/Hide No Results message
+            if (value === "") {
+                noResults.style.display = 'none';
+                if (window.innerWidth > 768) productTable.style.display = '';
+                mobileProducts.style.display = '';
+            } else if (!hasVisibleItems) {
+                noResults.style.display = 'block';
+                if (window.innerWidth > 768) productTable.style.display = 'none';
+                mobileProducts.style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                if (window.innerWidth > 768) productTable.style.display = '';
+                mobileProducts.style.display = '';
+            }
         });
     }
 </script>
